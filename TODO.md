@@ -46,7 +46,7 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
       CategoryCarousel, MeetupAttendees (beide jetzt Component Sets), MeetupFilterBar und MeetupActionBar;
       SiteHeader hatte sie schon. Figma zeigt dabei das Zielbild für die drei offenen Punkte oben
       (D-055 Reihenfolge Detail, D-056 Aktionsleiste, D-057 Filterleiste) → mit Alex entscheiden.
-- [ ] Mobile-Screen für „Übersicht – Gruppen“ fehlt noch (GroupCard braucht keine Variante, nur volle Breite).
+- [x] Mobile-Screen für „Übersicht – Gruppen“ (`27511:628703`, 02.11.2026).
 
 ## Logo (02.11.2026)
 
@@ -74,7 +74,7 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 - [x] Alle 54 Drift-Einträge entschieden (01.11.2026): Runde 1 mit Alex (D-001–D-005),
       Runde 2 selbstständig (eindeutige Fälle), Runde 3 Rückfragen an Alex. Protokoll:
       `contracts/DRIFT-LOG.md`. Token-Drift (D-024–D-030): Code massgeblich, kein `tokens.mjs --write`.
-- [ ] Neue Abweichungen weiterhin in `DRIFT.md` (nächste ID: D-058) und jede Entscheidung als
+- [ ] Neue Abweichungen weiterhin in `DRIFT.md` (nächste ID: D-060) und jede Entscheidung als
       neue Runde in `DRIFT-LOG.md` eintragen.
 - [ ] Contracts von `draft` auf `reviewed` setzen, sobald die Zuordnung bestätigt ist.
 - [x] Prüfscript für die Figma-Seite: `node contracts/scripts/figma-check.mjs` erzeugt Code für

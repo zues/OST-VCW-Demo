@@ -17,6 +17,9 @@ Stand: 01.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
       `starter/` → https://github.com/zues/OST-VC-Base (beide öffentlich, Branch `main`).
       `KONZEPT.md`, `TODO.md` und `contracts/` liegen seit 02.11.2026 im Demo-Repo.
 - [ ] Bilder von cataas.com liegen jetzt öffentlich im Demo-Repo – Lizenz klären.
+- [x] `npm run lint` grün (02.11.2026): Regel `react-hooks/set-state-in-effect` für
+      `src/components/ui/**` abgeschaltet (in beiden Repos). Grund: shadcn-`Carousel` gleicht im
+      Effect einmal `canScrollPrev/Next` ab – gewollt, unkritisch, und die shadcn-Dateien bleiben unverändert.
 
 ## Mobile (Review 31.10.2026)
 

@@ -4,7 +4,7 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 
 ## Nächste Schritte
 
-- [ ] **Figma-Inhalte auf die neuen Daten umstellen** (02.11.2026, bis auf die Upload-Frames erledigt):
+- [x] **Figma-Inhalte auf die neuen Daten umstellen** (02.11.2026):
   - [x] Alle 20 Bilder sind in der Datei. Die Hashes stehen in
         [contracts/figma-images.json](contracts/figma-images.json); der Weg ist in
         [FIGMA-ARBEITSWEISE.md](contracts/FIGMA-ARBEITSWEISE.md#bilder-hochladen) beschrieben.
@@ -19,8 +19,7 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
   - [x] **„Übersicht – Gruppen / Mobile“** (`27511:628703`, x 1640 / y 2000, 02.11.2026): Tabs mit aktivem
         „Gruppen“, Titel, GroupCards einspaltig (Schnurrlock Holmes, Schnurr & Knips, Das Blubberlabor,
         Camping unterm Sofazelt).
-  - [ ] Die 20 Upload-Frames `27502:5650`–`27502:5669` (oben rechts auf der Page) löschen oder in eine
-        Section „Bilder“ verschieben.
+  - [x] Die 20 Upload-Frames liegen auf einer eigenen Page (von Alex verschoben, 02.11.2026).
 - [ ] **Aufräumen: [docs/setup-anleitung.html](docs/setup-anleitung.html)** (02.11.2026) ist eine Kopie der
       Setup-Anleitung für die Studierenden (Artifact https://claude.ai/artifact/WHPH66Tnb1dq9hYqfgmLE9),
       ohne Drive-Link. Sie zieht als erste Lektion in die App „Lektionen“ (`~/Documents/dev/lektionen`).

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- Kopie der Setup-Anleitung (Artifact https://claude.ai/artifact/WHPH66Tnb1dq9hYqfgmLE9), Stand 02.11.2026.
+     Zieht in die App „Lektionen“ um, danach diese Datei löschen (siehe TODO.md). Drive-Link bewusst entfernt. -->
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup Vibe Coding OST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout: schmale Leitspalte, Schritte als nummerierte Karten mit Zeitlinie links */
+  --bg: #f3f4f1;
+  --surface: #ffffff;
+  --ink: #17201c;
+  --muted: #5b6660;
+  --line: #dde1dc;
+  --accent: #1f6f5c;
+  --accent-soft: #dcefe8;
+  --signal: #e2602f;
+  --signal-soft: #fbe6dc;
+  --code-bg: #17201c;
+  --code-ink: #e9efe9;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111613; --surface: #192019; --ink: #e8ede9; --muted: #9aa69f; --line: #2a332d;
+    --accent: #5cc4a6; --accent-soft: #1d3a31; --signal: #f08a5d; --signal-soft: #3a2419;
+    --code-bg: #0b0f0d; --code-ink: #e9efe9; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111613; --surface: #192019; --ink: #e8ede9; --muted: #9aa69f; --line: #2a332d;
+  --accent: #5cc4a6; --accent-soft: #1d3a31; --signal: #f08a5d; --signal-soft: #3a2419;
+  --code-bg: #0b0f0d; --code-ink: #e9efe9; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--font-body); }
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+/* Kopf */
+header { padding: 48px 0 28px; }
+.eyebrow { font: 500 13px/1 var(--font-mono); color: var(--muted); letter-spacing: .04em; }
+h1 { font: 800 clamp(36px, 7vw, 60px)/1.02 var(--font-display); margin: 12px 0 14px; letter-spacing: -.02em; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--accent); }
+.lead { color: var(--muted); max-width: 60ch; margin: 0; font-size: 17px; }
+
+.progress { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.progress .wrap { display: flex; align-items: center; gap: 14px; padding-top: 12px; padding-bottom: 12px; }
+.bar { flex: 1; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 99px; transition: width .4s ease; }
+.count { font: 500 14px var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dots { display: flex; gap: 6px; }
+.dots a { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font: 600 12px var(--font-mono); text-decoration: none; color: var(--muted); border: 1.5px solid var(--line); background: var(--surface); }
+.dots a.done { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+
+/* Schritte */
+main { padding: 28px 0 40px; display: grid; gap: 18px; }
+.step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px 24px 22px 76px; transition: border-color .2s; scroll-margin-top: 70px; }
+.step.done { border-color: var(--accent); }
+.num { position: absolute; left: 22px; top: 22px; width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; font: 800 18px var(--font-display); background: var(--accent-soft); color: var(--accent); }
+.step.done .num { background: var(--accent); color: var(--surface); }
+.step-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+h2 { font: 600 24px/1.2 var(--font-display); margin: 4px 0 2px; letter-spacing: -.01em; }
+.meta { color: var(--muted); font-size: 14px; }
+.tick { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; cursor: pointer; padding: 6px 12px; border: 1px solid var(--line); border-radius: 99px; user-select: none; }
+.tick input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+.step.done .tick { border-color: var(--accent); color: var(--accent); }
+
+ol.do { margin: 16px 0 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 10px; }
+ol.do > li { counter-increment: s; position: relative; padding-left: 32px; }
+ol.do > li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); font: 500 12px/20px var(--font-mono); text-align: center; color: var(--muted); }
+kbd { font: 500 13px var(--font-mono); background: var(--bg); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; }
+code { font: 14px var(--font-mono); background: var(--bg); padding: 1px 5px; border-radius: 4px; }
+.path { word-break: break-all; }
+
+/* Prompt- und Link-Boxen */
+.prompt { margin-top: 10px; background: var(--code-bg); color: var(--code-ink); border-radius: 12px; padding: 14px 14px 14px 16px; display: flex; gap: 12px; align-items: flex-start; }
+.prompt .label { font: 500 11px var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: #8fb8a9; display: block; margin-bottom: 6px; }
+.prompt pre { margin: 0; white-space: pre-wrap; font: 14px/1.55 var(--font-mono); flex: 1; min-width: 0; }
+.prompt var { font-style: normal; color: #ffb38f; }
+.copy { flex: none; font: 600 13px var(--font-body); background: #2b3a33; color: var(--code-ink); border: 0; border-radius: 8px; padding: 8px 12px; cursor: pointer; transition: background .15s; }
+.copy:hover { background: #3a4e45; }
+.copy.ok { background: #1f6f5c; }
+.link { display: flex; align-items: center; gap: 10px; margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; padding: 8px 8px 8px 14px; background: var(--bg); }
+.link a { flex: 1; min-width: 0; font: 14px var(--font-mono); overflow-wrap: anywhere; }
+.link .copy { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.link .copy.ok { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.todo-link { color: var(--signal); font: 14px var(--font-mono); flex: 1; }
+
+/* Hinweise */
+.note { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--signal-soft); border-left: 3px solid var(--signal); font-size: 15px; }
+.note b { color: var(--signal); }
+details { margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 10px; }
+summary { cursor: pointer; font-size: 14px; font-weight: 500; color: var(--accent); list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "i"; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid currentColor; display: inline-grid; place-items: center; font: 600 11px var(--font-mono); }
+details[open] summary { margin-bottom: 6px; }
+details ul { margin: 4px 0 0; padding-left: 20px; color: var(--muted); font-size: 15px; display: grid; gap: 4px; }
+
+/* Tabs */
+.tabs { margin-top: 16px; }
+.tablist { display: inline-flex; padding: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; gap: 4px; flex-wrap: wrap; }
+.tablist button { font: 500 14px var(--font-body); color: var(--muted); background: transparent; border: 0; padding: 8px 14px; border-radius: 9px; cursor: pointer; }
+.tablist button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgb(0 0 0 / .12); }
+.tablist small { font: 500 11px var(--font-mono); color: var(--signal); margin-left: 4px; }
+.panel { padding-top: 6px; }
+.panel[hidden] { display: none; }
+.who { font: 600 13px var(--font-mono); color: var(--muted); margin: 16px 0 0; text-transform: uppercase; letter-spacing: .06em; }
+
+/* Was /setup macht */
+.flow { margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.flow div { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 14px; background: var(--bg); }
+.flow b { display: block; font: 500 11px var(--font-mono); color: var(--muted); margin-bottom: 2px; }
+.flow .hand { border-color: var(--signal); background: var(--signal-soft); }
+.flow .hand b { color: var(--signal); }
+.legend { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--signal-soft); border: 1px solid var(--signal); vertical-align: -1px; margin-right: 4px; }
+
+/* Hilfe */
+.help { margin-top: 10px; display: grid; gap: 8px; }
+.help details { border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; background: var(--surface); margin: 0; }
+.help summary::before { content: "?"; }
+.help p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+section.extra { padding: 8px 0 60px; }
+section.extra h2 { font-size: 22px; }
+footer { color: var(--muted); font-size: 13px; padding: 0 0 40px; }
+
+@media (max-width: 560px) {
+  .step { padding: 20px 18px; }
+  .num { position: static; margin-bottom: 10px; }
+  .dots { display: none; }
+  .prompt { flex-direction: column; }
+  .copy { align-self: flex-end; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="eyebrow">OST · Vibe Coding · Setup</div>
+  <h1>In 5 Schritten <em>startklar</em>.</h1>
+  <p class="lead">Ihr arbeitet über die Claude Code Desktop App, ohne Terminal. Ihr kopiert die Prompts hier und schickt sie an Claude. Den Rest erledigt Claude.</p>
+</header>
+
+<div class="progress" aria-label="Fortschritt">
+  <div class="wrap">
+    <nav class="dots" aria-label="Schritte">
+      <a href="#s1" data-dot="s1">1</a><a href="#s2" data-dot="s2">2</a><a href="#s3" data-dot="s3">3</a><a href="#s4" data-dot="s4">4</a><a href="#s5" data-dot="s5">5</a>
+    </nav>
+    <div class="bar"><span id="bar"></span></div>
+    <div class="count" id="count">0 / 5</div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- 1 -->
+  <section class="step" id="s1">
+    <div class="num">1</div>
+    <div class="step-head">
+      <div><h2>Apps installieren</h2><div class="meta">ca. 10 Min · von Hand</div></div>
+      <label class="tick"><input type="checkbox" data-step="s1"> Erledigt</label>
+    </div>
+    <ol class="do">
+      <li><b>Claude Desktop App</b> installieren und anmelden (Pro-Abo oder höher).
+        <div class="link"><a href="https://claude.ai/download">https://claude.ai/download</a><button class="copy" data-copy="https://claude.ai/download">Kopieren</button></div></li>
+      <li><b>Figma Desktop App</b> installieren und anmelden.
+        <div class="link"><a href="https://www.figma.com/downloads/">https://www.figma.com/downloads/</a><button class="copy" data-copy="https://www.figma.com/downloads/">Kopieren</button></div></li>
+      <li>Im Finder einen Ordner anlegen: <code class="path">Dokumente/OST</code></li>
+    </ol>
+    <details>
+      <summary>Warum die Desktop-Apps?</summary>
+      <ul>
+        <li>Claude Code läuft in der Desktop App im Tab <b>Code</b> und arbeitet direkt in euren Ordnern.</li>
+        <li>Das Figma-Plugin „Desktop Bridge“ läuft nur in Figma Desktop, nicht im Browser.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- 2 -->
+  <section class="step" id="s2">
+    <div class="num">2</div>
+    <div class="step-head">
+      <div><h2>Figma-Datei holen</h2><div class="meta">ca. 3 Min · von Hand</div></div>
+      <label class="tick"><input type="checkbox" data-step="s2"> Erledigt</label>
+    </div>
+    <ol class="do">
+      <li>Den Drive-Ordner öffnen und die <code>.fig</code>-Datei herunterladen.
+        <div class="link"><span class="todo-link">&lt;Drive-Link: nur in der Lektion bzw. im Artifact, nicht im öffentlichen Repo&gt;</span></div></li>
+      <li>Figma Desktop öffnen → <b>Drafts</b> → <b>Import</b> → Datei wählen.</li>
+      <li>Datei öffnen und den Link oben aus der Adresszeile kopieren. Ihr braucht ihn in Schritt 4.</li>
+    </ol>
+    <div class="note"><b>Lizenz:</b> Die Datei enthält ein kostenpflichtiges UI-Kit. Nur fürs Seminar verwenden, nicht weitergeben und nicht öffentlich teilen.</div>
+  </section>
+
+  <!-- 3 -->
+  <section class="step" id="s3">
+    <div class="num">3</div>
+    <div class="step-head">
+      <div><h2>Projekt holen</h2><div class="meta">ca. 3 Min · Claude</div></div>
+      <label class="tick"><input type="checkbox" data-step="s3"> Erledigt</label>
+    </div>
+
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Variante">
+        <button role="tab" id="tab-local" aria-controls="p-local" aria-selected="true">Nur lokal</button>
+        <button role="tab" id="tab-team" aria-controls="p-team" aria-selected="false" tabindex="-1">Team-Repo auf GitHub <small>optional</small></button>
+      </div>
+
+      <div class="panel" id="p-local" role="tabpanel" aria-labelledby="tab-local">
+        <ol class="do">
+          <li>Claude Desktop → Tab <b>Code</b> → Ordner <code>Dokumente/OST</code> wählen.</li>
+          <li>Prompt senden (<var>Teamname</var> anpassen):
+            <div class="prompt"><div style="flex:1;min-width:0"><span class="label">Prompt</span><pre>Klone https://github.com/zues/OST-VC-Base in einen neuen Unterordner <var>teamname</var>. Prüfe danach, ob alles da ist, und sag mir, welchen Ordner ich öffnen soll.</pre></div><button class="copy">Kopieren</button></div></li>
+          <li>Neue Session starten und den Ordner <code>OST/<var>teamname</var></code> wählen.</li>
+        </ol>
+        <details>
+          <summary>Was heisst „lokal“?</summary>
+          <ul>
+            <li>Das Projekt liegt nur auf eurem Rechner, Git läuft trotzdem.</li>
+            <li>Jede Person im Team hat eine eigene Kopie. Teilen geht nicht automatisch.</li>
+            <li>Ein Team-Repo könnt ihr später jederzeit noch anlegen.</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="panel" id="p-team" role="tabpanel" aria-labelledby="tab-team" hidden>
+        <p class="who">Eine Person im Team</p>
+        <ol class="do">
+          <li>Claude Desktop → Tab <b>Code</b> → Ordner <code>Dokumente/OST</code> wählen.</li>
+          <li>Prompt senden (Namen anpassen):
+            <div class="prompt"><div style="flex:1;min-width:0"><span class="label">Prompt</span><pre>Klone https://github.com/zues/OST-VC-Base in einen neuen Unterordner <var>teamname</var>.
+Erstelle daraus ein privates GitHub-Repo <var>teamname</var> in meinem Account: das Original wird „upstream“, mein Repo „origin“, dann main pushen.
+Lade danach diese GitHub-Accounts als Collaborators ein: <var>user1</var>, <var>user2</var>.
+Falls ich bei GitHub nicht angemeldet bin oder etwas fehlt, führe mich Schritt für Schritt durch.</pre></div><button class="copy">Kopieren</button></div></li>
+          <li>Neue Session starten und den Ordner <code>OST/<var>teamname</var></code> wählen.</li>
+        </ol>
+        <p class="who">Alle anderen</p>
+        <ol class="do">
+          <li>Einladung von GitHub per E-Mail annehmen.</li>
+          <li>Claude Desktop → Tab <b>Code</b> → Ordner <code>Dokumente/OST</code> wählen.</li>
+          <li>Prompt senden:
+            <div class="prompt"><div style="flex:1;min-width:0"><span class="label">Prompt</span><pre>Klone https://github.com/<var>account</var>/<var>teamname</var> in einen neuen Unterordner <var>teamname</var>. Falls ich bei GitHub nicht angemeldet bin, führe mich durch den Login.</pre></div><button class="copy">Kopieren</button></div></li>
+          <li>Neue Session starten und den Ordner <code>OST/<var>teamname</var></code> wählen.</li>
+        </ol>
+        <details>
+          <summary>GitHub-Login und Zusammenarbeit</summary>
+          <ul>
+            <li>Ihr braucht einen GitHub-Account. Claude installiert bei Bedarf das GitHub-Werkzeug <code>gh</code>.</li>
+            <li>Der Login läuft über den Browser: Claude zeigt euch einen Code, den ihr auf github.com bestätigt.</li>
+            <li>Später einfach fragen: „Committe und pushe meine Änderungen“ oder „Hol die neusten Änderungen vom Team“.</li>
+            <li>Nicht gleichzeitig an derselben Datei arbeiten, sonst gibt es Konflikte. Claude hilft beim Auflösen.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="step" id="s4">
+    <div class="num">4</div>
+    <div class="step-head">
+      <div><h2>Setup mit Claude</h2><div class="meta">ca. 10 Min · Claude führt</div></div>
+      <label class="tick"><input type="checkbox" data-step="s4"> Erledigt</label>
+    </div>
+    <ol class="do">
+      <li>Im Projektordner diesen Befehl senden:
+        <div class="prompt"><div style="flex:1;min-width:0"><span class="label">Befehl</span><pre>/setup</pre></div><button class="copy">Kopieren</button></div></li>
+      <li>Claude macht die Schritte nacheinander. Bei den orangen Schritten seid ihr dran.</li>
+      <li>Nach dem MCP-Schritt: <b>neue Session starten</b> und <code>/setup</code> nochmals senden.</li>
+    </ol>
+    <div class="flow" aria-label="Ablauf von /setup">
+      <div><b>01</b>Node & Pakete</div>
+      <div><b>02</b>Dev-Server starten</div>
+      <div class="hand"><b>03 · ihr</b>Figma-Token erstellen</div>
+      <div><b>04</b>figma-console MCP</div>
+      <div class="hand"><b>04b · ihr</b>Neue Session</div>
+      <div class="hand"><b>05 · ihr</b>Plugin in Figma importieren</div>
+      <div class="hand"><b>06 · mit euch</b>Projekt-Steckbrief</div>
+    </div>
+    <p class="legend"><i></i>Hier braucht Claude euch. Schon im Projekt enthalten, nichts zu tun: shadcn-Skill, Contracts, Seiten-Vorlagen, Dev-Server-Konfiguration.</p>
+
+    <details>
+      <summary>Figma-Token: Wo und welche Rechte?</summary>
+      <ul>
+        <li>Figma → Menü oben links → <b>Settings</b> → <b>Security</b> → <b>Personal access tokens</b> → <b>Generate new token</b>.</li>
+        <li>Name: <code>Figma Console MCP</code>, Ablauf: Semesterende.</li>
+        <li><b>Read:</b> File content, File versions, Library content, Library assets, Current user.</li>
+        <li><b>Read und Write:</b> Comments. Alles andere: No access.</li>
+        <li>Token kopieren (beginnt mit <code>figd_</code>, wird nur einmal angezeigt) und Claude in den Chat geben.</li>
+        <li>Claude speichert es in eurer Benutzer-Konfiguration, nicht im Projekt.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Plugin „Desktop Bridge“ importieren</summary>
+      <ul>
+        <li>Figma Desktop → euer File öffnen.</li>
+        <li><b>Plugins</b> → <b>Development</b> → <b>Import plugin from manifest…</b></li>
+        <li>Im Dialog <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>G</kbd> drücken und eingeben:</li>
+      </ul>
+      <div class="link"><code class="path" style="flex:1;background:none">~/.figma-console-mcp/plugin/manifest.json</code><button class="copy" data-copy="~/.figma-console-mcp/plugin/manifest.json">Kopieren</button></div>
+      <ul>
+        <li>Danach <b>Plugins</b> → <b>Development</b> → <b>Figma Desktop Bridge</b> starten und das Fenster offen lassen.</li>
+        <li>Die Datei erscheint erst, wenn Claude die MCP einmal gestartet hat (neue Session).</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Was ist die figma-console MCP?</summary>
+      <ul>
+        <li>Damit kann Claude euer Figma-File lesen und bearbeiten: Frames, Komponenten, Texte, Screenshots.</li>
+        <li>Die Verbindung läuft über das Plugin „Desktop Bridge“ im offenen File.</li>
+      </ul>
+      <div class="link"><a href="https://docs.figma-console-mcp.southleft.com/">https://docs.figma-console-mcp.southleft.com/</a><button class="copy" data-copy="https://docs.figma-console-mcp.southleft.com/">Kopieren</button></div>
+    </details>
+  </section>
+
+  <!-- 5 -->
+  <section class="step" id="s5">
+    <div class="num">5</div>
+    <div class="step-head">
+      <div><h2>Testen</h2><div class="meta">ca. 2 Min · Claude</div></div>
+      <label class="tick"><input type="checkbox" data-step="s5"> Erledigt</label>
+    </div>
+    <ol class="do">
+      <li>Figma Desktop offen, Plugin läuft im File.</li>
+      <li>Prompt senden:
+        <div class="prompt"><div style="flex:1;min-width:0"><span class="label">Prompt</span><pre>Prüfe das Setup: Läuft der Dev-Server, ist Figma verbunden und das richtige File aktiv? Mach einen Screenshot von der ersten Seite im Figma-File und zeig mir die Checkliste.</pre></div><button class="copy">Kopieren</button></div></li>
+      <li>Alles ✅? Dann seid ihr startklar.</li>
+    </ol>
+    <details>
+      <summary>Und danach?</summary>
+      <ul>
+        <li>Neue Seiten baut ihr nach dem Ablauf in <code>CLAUDE.md</code>: Seiten-Doku → Figma → Contracts → Code → Prüfen.</li>
+        <li>Zum Beispiel: „Leg die Seiten-Doku für die Übersicht an“.</li>
+      </ul>
+    </details>
+  </section>
+</main>
+
+<section class="extra wrap" aria-labelledby="help-h">
+  <h2 id="help-h">Wenn es hakt</h2>
+  <div class="help">
+    <details><summary>Claude sieht keine Figma-Werkzeuge</summary><p>Neue Session starten. Die MCP wird nur beim Start einer Session geladen.</p></details>
+    <details><summary>Plugin zeigt „MCP scanning“ oder verbindet nicht</summary><p>Läuft eine Claude-Session in diesem Projekt? Plugin schliessen und neu starten. Dann Claude fragen: „Prüfe die Figma-Verbindung mit figma_diagnose“.</p></details>
+    <details><summary>Manifest-Datei nicht gefunden</summary><p>Claude fragen: „Wo liegt das Desktop Bridge Plugin?“ Claude ermittelt den Pfad.</p></details>
+    <details><summary>Fehler 401 oder 403 von Figma</summary><p>Token falsch oder Rechte fehlen. Neues Token mit den Rechten aus Schritt 4 erstellen und Claude geben.</p></details>
+    <details><summary>Seite auf localhost:3000 lädt nicht</summary><p>Claude fragen: „Starte den Dev-Server neu und zeig mir die Fehlermeldung“.</p></details>
+    <details><summary>Irgendwas anderes</summary><p><code>/setup</code> erneut senden. Claude prüft jeden Schritt und macht nur, was noch fehlt.</p></details>
+  </div>
+</section>
+
+<footer class="wrap">Basisprojekt: <a href="https://github.com/zues/OST-VC-Base">github.com/zues/OST-VC-Base</a> · Die Schritte von <code>/setup</code> stehen im Projekt unter <code>.claude/skills/setup/</code>.</footer>
+
+<script>
+(function () {
+  // Kopieren
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.dataset.copy || btn.parentElement.querySelector('pre').innerText;
+      var done = function () { btn.textContent = 'Kopiert ✓'; btn.classList.add('ok'); setTimeout(function () { btn.textContent = 'Kopieren'; btn.classList.remove('ok'); }, 1600); };
+      try { navigator.clipboard.writeText(text).then(done, function () { btn.textContent = 'Markieren und ⌘C'; }); }
+      catch (e) { btn.textContent = 'Markieren und ⌘C'; }
+    });
+  });
+
+  // Tabs
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    store('tab', tab.id);
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; select(n); n.focus();
+      }
+    });
+  });
+
+  // Fortschritt
+  function load(k) { try { return localStorage.getItem('ost-setup-' + k); } catch (e) { return null; } }
+  function store(k, v) { try { localStorage.setItem('ost-setup-' + k, v); } catch (e) {} }
+  var boxes = document.querySelectorAll('[data-step]');
+  function update() {
+    var n = 0;
+    boxes.forEach(function (b) {
+      var id = b.dataset.step;
+      document.getElementById(id).classList.toggle('done', b.checked);
+      document.querySelector('[data-dot="' + id + '"]').classList.toggle('done', b.checked);
+      if (b.checked) n++;
+    });
+    document.getElementById('bar').style.width = (n / boxes.length * 100) + '%';
+    document.getElementById('count').textContent = n === boxes.length ? 'Startklar ✓' : n + ' / ' + boxes.length;
+  }
+  boxes.forEach(function (b) {
+    b.checked = load(b.dataset.step) === '1';
+    b.addEventListener('change', function () { store(b.dataset.step, b.checked ? '1' : '0'); update(); });
+  });
+  var saved = load('tab'); if (saved && document.getElementById(saved)) select(document.getElementById(saved));
+  update();
+})();
+</script>
+</body>
+</html>

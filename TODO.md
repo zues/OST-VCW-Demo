@@ -20,6 +20,10 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
         (Schnurrlock Holmes, Schnurr & Knips, Das Blubberlabor, Camping unterm Sofazelt).
   - [ ] Die 20 Upload-Frames `27502:5650`–`27502:5669` (oben rechts auf der Page) löschen oder in eine
         Section „Bilder“ verschieben.
+- [ ] **Aufräumen: [docs/setup-anleitung.html](docs/setup-anleitung.html)** (02.11.2026) ist eine Kopie der
+      Setup-Anleitung für die Studierenden (Artifact https://claude.ai/artifact/WHPH66Tnb1dq9hYqfgmLE9),
+      ohne Drive-Link. Sie zieht als erste Lektion in die App „Lektionen“ (`~/Documents/dev/lektionen`).
+      Danach die Datei löschen.
 - [x] **Git-Repositories** (02.11.2026): `musterloesung/` → https://github.com/zues/OST-VCW-Demo,
       `starter/` → https://github.com/zues/OST-VC-Base (beide öffentlich, Branch `main`).
       `KONZEPT.md`, `TODO.md` und `contracts/` liegen seit 02.11.2026 im Demo-Repo.

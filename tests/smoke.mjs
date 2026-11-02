@@ -40,8 +40,8 @@ const shot = (name) => shotsDir && page.screenshot({ path: join(shotsDir, `${nam
 // Übersicht + Kategorienfilter (Default-Filter: Umkreis 30 km)
 await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle" })
 await shot("overview")
-check("Alle Meetups", await cards(), 27)
-for (const [category, expected] of [["Outdoor", 3], ["Training", 3], ["Online", 5], ["Gesundheit", 4]]) {
+check("Alle Meetups", await cards(), 28)
+for (const [category, expected] of [["Outdoor", 3], ["Training", 2], ["Online", 4], ["Gesundheit", 2]]) {
   await page.getByRole("button", { name: category, exact: true }).click()
   check(`Kategorie ${category}`, await cards(), expected)
 }
@@ -50,18 +50,18 @@ await page.getByRole("button", { name: "Alle Meetups", exact: true }).click()
 // Suche behält gesetzte Filter
 await page.getByRole("combobox", { name: "Datum" }).click()
 await page.getByRole("option", { name: "Heute" }).click()
-await page.getByRole("textbox", { name: "Meetups durchsuchen" }).fill("katz")
+await page.getByRole("textbox", { name: "Meetups durchsuchen" }).fill("miau")
 await page.keyboard.press("Enter")
-await page.waitForURL(/q=katz/)
-check("Suche „katz“ + Heute", await cards(), 3)
+await page.waitForURL(/q=miau/)
+check("Suche „miau“ + Heute", await cards(), 2)
 
 // Gruppen-Tab → Meetups einer Gruppe
 await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle" })
 await page.getByRole("tab", { name: "Gruppen" }).click()
-check("Gruppen", await page.locator("[data-slot=card-title] >> visible=true").count(), 8)
+check("Gruppen", await page.locator("[data-slot=card-title] >> visible=true").count(), 20)
 await page.getByRole("button", { name: "Meetups ansehen" }).first().click()
 await page.waitForURL(/q=/)
-check("Meetups der nächsten Gruppe (Clicker Cats)", await cards(), 3)
+check("Meetups der nächsten Gruppe (Schnurrlock Holmes)", await cards(), 2)
 
 // Ort (Cookie): aus Bern sind nur Online-Meetups im Umkreis von 30 km
 await page.getByRole("button", { name: "Ort" }).click()
@@ -77,8 +77,8 @@ check("Englisch", await page.locator("h1 >> visible=true").textContent(), "Meetu
 await context.clearCookies()
 
 // Detailseite
-await page.goto(`${BASE_URL}/meetups/leinenspaziergang-uetliberg`, { waitUntil: "networkidle" })
-check("Detail-Titel", await page.locator("h1 >> visible=true").textContent(), "Leinenspaziergang auf den Uetliberg")
+await page.goto(`${BASE_URL}/meetups/schaum-farbe-panik-experimente-fuer-anfaenger`, { waitUntil: "networkidle" })
+check("Detail-Titel", await page.locator("h1 >> visible=true").textContent(), "Schaum, Farbe, Panik: Experimente für Anfänger")
 await page.evaluate(() => localStorage.clear())
 await page.reload({ waitUntil: "networkidle" })
 await shot("detail")

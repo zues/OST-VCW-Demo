@@ -58,10 +58,13 @@ erstellen, Kommentare, echte Karten, Backend.
 - **Tailwind CSS v4** + **shadcn/ui** im aktuellen Standard-Stil **`base-nova`**
   (Unterbau **Base UI** statt Radix – Props wie `render` statt `asChild`)
 - Icons: **Lucide**
-- **Mock-Daten** als TypeScript in `src/data/` (28 Meetups, 8 Gruppen) – keine Datenbank, keine API
+- **Mock-Daten** in `src/data/meetcat.json` (20 Gruppen, 30 Meetups, 10 Mitglieder; Texte im Gonzo-Stil, Stand
+  02.11.2026), typisiert und verknüpft in `src/data/meetups.ts` – keine Datenbank, keine API. Dieselbe
+  JSON-Datei und die Bilder liegen auch im Starter.
 - **Kein Login**; „heute“ ist im Mock fest auf den 6.11.2026 gesetzt (`TODAY`)
 - **Teilnahme-Status** clientseitig, im `localStorage` persistiert (`use-attendance.ts`)
-- Bilder: Katzenfotos von cataas.com, lokal in `public/images/` (Lizenz unklar → siehe TODO)
+- Bilder: 20 Katzenbilder von Alex (je ein Thema pro Gruppe) in `public/images/meetcat/`; Meetups
+  zeigen das Bild ihrer Gruppe, Avatare verwenden ebenfalls diese Bilder
 
 ### Lokal starten
 
@@ -78,7 +81,7 @@ in `.env.local` eintragen (nicht im Repo).
 
 ```ts
 type Member = { id: string; name: string; avatarUrl: string }
-type Group = { id: string; name: string; rating: number; imageUrl: string }
+type Group = { id: string; name: string; topic: string; description: string; rating: number; imageUrl: string }
 
 type Meetup = {
   id: string

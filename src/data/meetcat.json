@@ -1,0 +1,892 @@
+{
+  "name": "MeetCat",
+  "language": "de-CH",
+  "today": "2026-11-06",
+  "note": "Mock-Daten für MeetCat. Alle Datumsfilter rechnen relativ zu «today». Bilder liegen unter public/images/meetcat/.",
+  "groups": [
+    {
+      "id": "meetcat-01",
+      "title": "Mission Miau",
+      "topic": "Weltraum und Science-Fiction",
+      "description": "Wir hatten zwei Kartonraketen, eine Taschenlampe, drei Packungen Trockenfutter und eine Katze, die fest entschlossen war, den Orbit zu erreichen. Nicht dass man all das für eine Mondmission braucht – aber wenn man einmal anfängt, Raumanzüge aus Alufolie zu basteln, gibt es kein Zurück.",
+      "rating": 4.8,
+      "image": {
+        "src": "/images/meetcat/MeetCat-01-Astronaut.jpg",
+        "alt": "Katze zum Thema Weltraum und Science-Fiction"
+      }
+    },
+    {
+      "id": "meetcat-02",
+      "title": "Vollgas auf Samtpfoten",
+      "topic": "Rennsport und Karting",
+      "description": "Die Zielflagge weht, der Kartonflitzer vibriert, und irgendwo in der dritten Kurve wird uns klar: Diese Katze kennt keine Bremse. Keine Regeln, keine Gnade, nur Samtpfoten auf Anschlag und der süsse Duft von heiss gelaufener Wellpappe.",
+      "rating": 4.6,
+      "image": {
+        "src": "/images/meetcat/MeetCat-02-Rennfahrer.jpg",
+        "alt": "Katze zum Thema Rennsport und Karting"
+      }
+    },
+    {
+      "id": "meetcat-03",
+      "title": "Mehl auf den Schnurrhaaren",
+      "topic": "Backen und Küchenchaos",
+      "description": "Es begann mit einem harmlosen Zopf. Drei Stunden später lag die Küche unter einer Mehlschicht, der Ofen piepte wie eine Alarmanlage, und eine getigerte Katze sass mit weissem Bart auf dem Kühlschrank und sah uns an, als hätten wir das alles selbst verschuldet. Hatten wir auch.",
+      "rating": 4.9,
+      "image": {
+        "src": "/images/meetcat/MeetCat-03-Baecker.jpg",
+        "alt": "Katze zum Thema Backen und Küchenchaos"
+      }
+    },
+    {
+      "id": "meetcat-04",
+      "title": "Die Sofa-Piraten",
+      "topic": "Piraten und Schatzsuche",
+      "description": "Das Wohnzimmer ist kein Wohnzimmer. Es ist ein offenes Meer voller Gefahren, und unter dem Sofa liegt ein Schatz, den seit Jahren niemand mehr gesehen hat. Wir stechen bei Sonnenuntergang in See. Augenklappe ist Pflicht, Seekrankheit freiwillig.",
+      "rating": 4.7,
+      "image": {
+        "src": "/images/meetcat/MeetCat-04-Pirat.jpg",
+        "alt": "Katze zum Thema Piraten und Schatzsuche"
+      }
+    },
+    {
+      "id": "meetcat-05",
+      "title": "Blubberpfoten",
+      "topic": "Unterwasserwelt und Tauchen",
+      "description": "Katzen hassen Wasser – das behaupten jedenfalls die Experten. Wir haben die Experten nie getroffen. Wir haben nur ein U-Boot aus einem Waschmittelkarton, ein Aquarium voller Fragen und eine Crew, die verdächtig ruhig bleibt, sobald es blubbert.",
+      "rating": 4.5,
+      "image": {
+        "src": "/images/meetcat/MeetCat-05-U-Boot.jpg",
+        "alt": "Katze zum Thema Unterwasserwelt und Tauchen"
+      }
+    },
+    {
+      "id": "meetcat-06",
+      "title": "Sturm im Fell",
+      "topic": "Wetter und Naturphänomene",
+      "description": "Die Wetter-App sagte «leicht bewölkt». Die Katze am Fenster wusste es besser. Sie sah die Front kommen, lange bevor der Wind die Balkonpflanzen umwarf, und wir schworen uns: Nie wieder trauen wir einer Prognose ohne Schnurrhaare.",
+      "rating": 4.6,
+      "image": {
+        "src": "/images/meetcat/MeetCat-06-Wetterreporter.jpg",
+        "alt": "Katze zum Thema Wetter und Naturphänomene"
+      }
+    },
+    {
+      "id": "meetcat-07",
+      "title": "Die Tüftelpfoten",
+      "topic": "Erfinden und Basteln",
+      "description": "Irgendwann nach Mitternacht hatte die Maschine einen eigenen Willen. Sie bestand aus zwei Schuhschachteln, einem Ventilator und einer Klopapierrolle, und sie tat genau eine Sache: Leckerli quer über den Teppich schleudern. Wir nannten es Fortschritt.",
+      "rating": 4.8,
+      "image": {
+        "src": "/images/meetcat/MeetCat-07-Erfinder.jpg",
+        "alt": "Katze zum Thema Erfinden und Basteln"
+      }
+    },
+    {
+      "id": "meetcat-08",
+      "title": "Abflug ab Fensterbank",
+      "topic": "Fliegen und Luftfahrt",
+      "description": "Die Fensterbank ist der wichtigste Flughafen der Schweiz, und niemand weiss davon. Hier starten täglich Hunderte Missionen, meist Richtung Vogelhäuschen, selten mit Landeerlaubnis. Wir falten Flieger, lesen Wolken und tun so, als hätten wir das Cockpit im Griff.",
+      "rating": 4.4,
+      "image": {
+        "src": "/images/meetcat/MeetCat-08-Pilot.jpg",
+        "alt": "Katze zum Thema Fliegen und Luftfahrt"
+      }
+    },
+    {
+      "id": "meetcat-09",
+      "title": "Schnurrlock Holmes",
+      "topic": "Rätsel und Detektivspiele",
+      "description": "Das Leckerli-Glas war leer. Keine Zeugen, keine Fingerabdrücke, nur ein paar verdächtige Krümel auf einem flauschigen Kissen und eine Katze mit sehr, sehr unschuldigem Blick. Wir ermitteln. Wir trauen niemandem. Am wenigsten dem Kissen.",
+      "rating": 4.9,
+      "image": {
+        "src": "/images/meetcat/MeetCat-09-Detektiv.jpg",
+        "alt": "Katze zum Thema Rätsel und Detektivspiele"
+      }
+    },
+    {
+      "id": "meetcat-10",
+      "title": "Camping unterm Sofazelt",
+      "topic": "Camping und gemütliche Abenteuer",
+      "description": "Draussen tobt der Feierabendverkehr, drinnen herrscht Wildnis. Zwischen zwei Stühlen und einer Wolldecke steht ein Lager, das jedem Sturm standhält – ausser einer Katze, die um drei Uhr morgens beschliesst, dass das Zelt jetzt ihr gehört.",
+      "rating": 5.0,
+      "image": {
+        "src": "/images/meetcat/MeetCat-10-Camping.jpg",
+        "alt": "Katze zum Thema Camping und gemütliche Abenteuer"
+      }
+    },
+    {
+      "id": "meetcat-11",
+      "title": "Miau Unplugged",
+      "topic": "Musik und Jam-Sessions",
+      "description": "Der Verstärker brummt, das Tamburin liegt bereit, und die Leadsängerin hat gerade beschlossen, nur noch in hohen Tönen zu kommunizieren. Das hier ist kein Konzert, das ist eine Naturgewalt mit Schnurrhaaren. Ohrenstöpsel liegen am Eingang.",
+      "rating": 4.7,
+      "image": {
+        "src": "/images/meetcat/MeetCat-11-Rockstar.jpg",
+        "alt": "Katze zum Thema Musik und Jam-Sessions"
+      }
+    },
+    {
+      "id": "meetcat-12",
+      "title": "Das Blubberlabor",
+      "topic": "Wissenschaft und Experimente",
+      "description": "Wissenschaft heisst: Man weiss nicht genau, was passieren wird, und probiert es trotzdem. Bei uns schäumt es, es zischt, es wechselt die Farbe, und mindestens eine Katze beobachtet das Ganze mit dem Gesicht einer Nobelpreisträgerin, die alles kommen sah.",
+      "rating": 4.8,
+      "image": {
+        "src": "/images/meetcat/MeetCat-12-Labor.jpg",
+        "alt": "Katze zum Thema Wissenschaft und Experimente"
+      }
+    },
+    {
+      "id": "meetcat-13",
+      "title": "Kartonbau AG",
+      "topic": "Bauen und Modellbau",
+      "description": "Zwölf Kartons, eine Rolle Klebeband und ein Plan, der auf eine Serviette passte. Mehr braucht es nicht, um eine Baustelle zu eröffnen, die jedes Bauamt in Panik versetzen würde. Bauleitung: Katze. Haftung: keine.",
+      "rating": 4.6,
+      "image": {
+        "src": "/images/meetcat/MeetCat-13-Baggerfahrer.jpg",
+        "alt": "Katze zum Thema Bauen und Modellbau"
+      }
+    },
+    {
+      "id": "meetcat-14",
+      "title": "Chief Meow Officers",
+      "topic": "Business und Networking",
+      "description": "Sie tragen Krawatte, sie halten Meetings auf der Tastatur ab, und ihr Fünfjahresplan besteht hauptsächlich aus Nickerchen. Willkommen im härtesten Netzwerk der Stadt, wo jeder Deal mit einem langsamen Blinzeln besiegelt wird.",
+      "rating": 4.5,
+      "image": {
+        "src": "/images/meetcat/MeetCat-14-Chef.jpg",
+        "alt": "Katze zum Thema Business und Networking"
+      }
+    },
+    {
+      "id": "meetcat-15",
+      "title": "Die Liga der Superpfoten",
+      "topic": "Superhelden und Rollenspiele",
+      "description": "Die Stadt schläft. Irgendwo fällt eine Tasse vom Tisch, und ein Schatten mit Umhang springt durchs Treppenhaus. Wir erfinden Superkräfte, basteln Masken und retten die Welt mindestens einmal pro Treffen. Meistens vor dem Staubsauger.",
+      "rating": 4.9,
+      "image": {
+        "src": "/images/meetcat/MeetCat-15-Superheld.jpg",
+        "alt": "Katze zum Thema Superhelden und Rollenspiele"
+      }
+    },
+    {
+      "id": "meetcat-16",
+      "title": "Grüne Pfoten",
+      "topic": "Gärtnern und Zimmerpflanzen",
+      "description": "Die Monstera hat Angst, und das zu Recht. Hier treffen sich Katzen und Menschen, die Erde lieben, Blätter respektieren und gelernt haben, dass nicht jede Pflanze ein Salat ist. Wir topfen um, wir säen aus, und manchmal reden wir mit dem Basilikum.",
+      "rating": 4.8,
+      "image": {
+        "src": "/images/meetcat/MeetCat-16-Gaertner.jpg",
+        "alt": "Katze zum Thema Gärtnern und Zimmerpflanzen"
+      }
+    },
+    {
+      "id": "meetcat-17",
+      "title": "Mit Miau nach oben",
+      "topic": "Ballonfahrten und Reiselust",
+      "description": "Wir stiegen in den Korb, ohne zu wissen, wohin der Wind uns tragen würde. Das ist das Wesen der Ballonfahrt: totale Freiheit und null Kontrolle. Die Katze blieb gelassen – sie wusste schon immer, dass die Welt von oben besser aussieht.",
+      "rating": 4.7,
+      "image": {
+        "src": "/images/meetcat/MeetCat-17-Ballonfahrer.jpg",
+        "alt": "Katze zum Thema Ballonfahrten und Reiselust"
+      }
+    },
+    {
+      "id": "meetcat-18",
+      "title": "Schnurr & Knips",
+      "topic": "Fotografie und kreative Bilder",
+      "description": "Das perfekte Foto existiert. Wir haben es nur noch nie gemacht, weil die Katze genau im entscheidenden Moment gähnt, den Kopf dreht oder die Kamera für ein Spielzeug hält. Wir drücken trotzdem ab. Tausendmal. Einmal klappt es.",
+      "rating": 4.9,
+      "image": {
+        "src": "/images/meetcat/MeetCat-18-Fotograf.jpg",
+        "alt": "Katze zum Thema Fotografie und kreative Bilder"
+      }
+    },
+    {
+      "id": "meetcat-19",
+      "title": "Der Pfotenexpress",
+      "topic": "Eisenbahn und Modellzüge",
+      "description": "Die Lok pfeift, die Weichen sind gestellt, und auf Gleis 3 sitzt eine Katze, die sich weigert, den Bahnsteig zu verlassen. Fahrplanmässig ist das nicht. Aber wer Modelleisenbahn mit Katzen betreibt, lernt schnell: Der Fahrplan ist nur eine Empfehlung.",
+      "rating": 4.6,
+      "image": {
+        "src": "/images/meetcat/MeetCat-19-Lokfuehrer.jpg",
+        "alt": "Katze zum Thema Eisenbahn und Modellzüge"
+      }
+    },
+    {
+      "id": "meetcat-20",
+      "title": "Mondpfoten Expedition",
+      "topic": "Mondforschung und Rover-Bau",
+      "description": "Der Krater war tiefer als erwartet, und er bestand aus Pappmaché. Unser Rover steckte fest, das Funkgerät rauschte, und die Kommandantin putzte sich in aller Ruhe die Pfote. Es war der grösste Moment der Mission, und niemand hat ihn fotografiert.",
+      "rating": 4.8,
+      "image": {
+        "src": "/images/meetcat/MeetCat-20-Mondforscher.jpg",
+        "alt": "Katze zum Thema Mondforschung und Rover-Bau"
+      }
+    }
+  ],
+  "members": [
+    {
+      "id": "m1",
+      "name": "Lena & Minka",
+      "avatar": "/images/meetcat/MeetCat-02-Rennfahrer.jpg"
+    },
+    {
+      "id": "m2",
+      "name": "Jonas & Grauchen",
+      "avatar": "/images/meetcat/MeetCat-04-Pirat.jpg"
+    },
+    {
+      "id": "m3",
+      "name": "Sara & Nox",
+      "avatar": "/images/meetcat/MeetCat-06-Wetterreporter.jpg"
+    },
+    {
+      "id": "m4",
+      "name": "Marco & Tiger",
+      "avatar": "/images/meetcat/MeetCat-08-Pilot.jpg"
+    },
+    {
+      "id": "m5",
+      "name": "Aylin & Mochi",
+      "avatar": "/images/meetcat/MeetCat-10-Camping.jpg"
+    },
+    {
+      "id": "m6",
+      "name": "Tim & Gras",
+      "avatar": "/images/meetcat/MeetCat-12-Labor.jpg"
+    },
+    {
+      "id": "m7",
+      "name": "Nina & Shadow",
+      "avatar": "/images/meetcat/MeetCat-14-Chef.jpg"
+    },
+    {
+      "id": "m8",
+      "name": "Luca & Simba",
+      "avatar": "/images/meetcat/MeetCat-16-Gaertner.jpg"
+    },
+    {
+      "id": "m9",
+      "name": "Mia & Oreo",
+      "avatar": "/images/meetcat/MeetCat-18-Fotograf.jpg"
+    },
+    {
+      "id": "m10",
+      "name": "Ben & Pudding",
+      "avatar": "/images/meetcat/MeetCat-20-Mondforscher.jpg"
+    }
+  ],
+  "meetups": [
+    {
+      "id": "1",
+      "slug": "countdown-im-kinderzimmer-raketenbau",
+      "title": "Countdown im Kinderzimmer: Raketenbau",
+      "description": "Wir hatten Klebeband, Alufolie und eine Deadline, die nur in Katzenjahren Sinn ergab. Heute Abend bauen wir Raketen, die nie abheben werden, und fühlen uns trotzdem wie im Kontrollzentrum.",
+      "groupId": "meetcat-01",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-06T18:00:00+01:00",
+      "endsAt": "2026-11-06T20:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Makerspace Oerlikon",
+        "address": "Schaffhauserstrasse 359, 8050 Zürich",
+        "city": "Zürich",
+        "distanceKm": 6
+      },
+      "price": 15,
+      "capacity": 12,
+      "attendeeCount": 9
+    },
+    {
+      "id": "2",
+      "slug": "kartonflitzer-grand-prix",
+      "title": "Kartonflitzer Grand Prix",
+      "description": "Zwanzig Kartonflitzer, eine Startlinie aus Malerkrepp und keine einzige Bremse. Wer hier gewinnt, hat entweder Talent oder schlicht keine Angst vor der Haarnadelkurve beim Kratzbaum.",
+      "groupId": "meetcat-02",
+      "category": "spieltreff",
+      "format": "in-person",
+      "startsAt": "2026-11-06T18:30:00+01:00",
+      "endsAt": "2026-11-06T20:30:00+01:00",
+      "recurring": true,
+      "location": {
+        "name": "Kartbahn-Halle Altstetten",
+        "address": "Hohlstrasse 400, 8048 Zürich",
+        "city": "Zürich",
+        "distanceKm": 5
+      },
+      "price": null,
+      "capacity": 20,
+      "attendeeCount": 20
+    },
+    {
+      "id": "3",
+      "slug": "zopf-chaos-und-mehlstaub",
+      "title": "Zopf, Chaos und Mehlstaub",
+      "description": "Ein Hefezopf, zehn Menschen, zehn Katzen und eine Küche, die danach nie mehr dieselbe sein wird. Schürzen werden gestellt, die Würde bringst du selbst mit – sie geht ohnehin verloren.",
+      "groupId": "meetcat-03",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-06T19:00:00+01:00",
+      "endsAt": "2026-11-06T21:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Quartierküche Kreis 5",
+        "address": "Heinrichstrasse 100, 8005 Zürich",
+        "city": "Zürich",
+        "distanceKm": 3
+      },
+      "price": 35,
+      "capacity": 10,
+      "attendeeCount": 9
+    },
+    {
+      "id": "4",
+      "slug": "der-fall-des-leeren-leckerli-glases",
+      "title": "Der Fall des leeren Leckerli-Glases",
+      "description": "Das Glas war voll, als wir gingen. Als wir zurückkamen, war es leer. Hilf uns, den Tatort zu sichern, Krümelspuren zu deuten und den Hauptverdächtigen zu überführen, der gerade schnurrend auf dem Sofa liegt.",
+      "groupId": "meetcat-09",
+      "category": "spieltreff",
+      "format": "in-person",
+      "startsAt": "2026-11-06T19:30:00+01:00",
+      "endsAt": "2026-11-06T21:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Escape Room Altstadt",
+        "address": "Niederdorfstrasse 10, 8001 Zürich",
+        "city": "Zürich",
+        "distanceKm": 1
+      },
+      "price": 20,
+      "capacity": 8,
+      "attendeeCount": 6
+    },
+    {
+      "id": "5",
+      "slug": "feierabend-networking-der-chief-meow-officers",
+      "title": "Feierabend-Networking der Chief Meow Officers",
+      "description": "Visitenkarten mit Pfotenabdruck, ernste Gespräche über Kartonpreise und der heimliche Plan, sämtliche Sonnenplätze der Stadt zu übernehmen. Krawatte optional, gute Laune Pflicht.",
+      "groupId": "meetcat-14",
+      "category": "katzencafe",
+      "format": "in-person",
+      "startsAt": "2026-11-06T18:00:00+01:00",
+      "endsAt": "2026-11-06T20:00:00+01:00",
+      "recurring": true,
+      "location": {
+        "name": "Café Schnurrhaar",
+        "address": "Josefstrasse 51, 8005 Zürich",
+        "city": "Zürich",
+        "distanceKm": 3
+      },
+      "price": null,
+      "capacity": 30,
+      "attendeeCount": 22
+    },
+    {
+      "id": "6",
+      "slug": "wohnzimmerkonzert-im-livestream",
+      "title": "Wohnzimmerkonzert im Livestream",
+      "description": "Das Wohnzimmer wird zur Bühne, das Mikrofon zum Kratzspielzeug, und irgendwo im Chat schreit jemand «Zugabe!». Ein Konzert, das man nicht hört, sondern übersteht.",
+      "groupId": "meetcat-11",
+      "category": "online",
+      "format": "online",
+      "startsAt": "2026-11-06T20:00:00+01:00",
+      "endsAt": "2026-11-06T21:30:00+01:00",
+      "recurring": false,
+      "location": null,
+      "price": null,
+      "capacity": 100,
+      "attendeeCount": 31
+    },
+    {
+      "id": "7",
+      "slug": "schaum-farbe-panik-experimente-fuer-anfaenger",
+      "title": "Schaum, Farbe, Panik: Experimente für Anfänger",
+      "description": "Wir mischen, wir rühren, wir schäumen. Niemand weiss genau, was am Ende herauskommt, aber eine Katze sitzt in der ersten Reihe und macht sich Notizen.",
+      "groupId": "meetcat-12",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-06T20:00:00+01:00",
+      "endsAt": "2026-11-06T21:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Volkshochschule",
+        "address": "Bärengasse 22, 8001 Zürich",
+        "city": "Zürich",
+        "distanceKm": 1
+      },
+      "price": 10,
+      "capacity": 15,
+      "attendeeCount": 3
+    },
+    {
+      "id": "8",
+      "slug": "foehn-front-und-fensterbank",
+      "title": "Föhn, Front und Fensterbank",
+      "description": "Wir laufen durch den Wald, schauen in den Himmel und versuchen zu verstehen, warum die Katze schon gestern wusste, dass es heute regnet. Regenjacke mitbringen. Die Katze hat ihre eigene.",
+      "groupId": "meetcat-06",
+      "category": "outdoor",
+      "format": "in-person",
+      "startsAt": "2026-11-07T10:00:00+01:00",
+      "endsAt": "2026-11-07T12:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Waldhaus Dolder",
+        "address": "Kurhausstrasse 20, 8032 Zürich",
+        "city": "Zürich",
+        "distanceKm": 4
+      },
+      "price": null,
+      "capacity": 12,
+      "attendeeCount": 7
+    },
+    {
+      "id": "9",
+      "slug": "schatzsuche-unter-dem-sofa",
+      "title": "Schatzsuche unter dem Sofa",
+      "description": "Unter dem Sofa liegt ein Schatz, und er wird bewacht. Mit Karte, Kompass und Taschenlampe tauchen wir ab in eine Welt aus Staubflusen, verlorenen Haargummis und einem Plüschtier, das seit Jahren vermisst wird.",
+      "groupId": "meetcat-04",
+      "category": "spieltreff",
+      "format": "in-person",
+      "startsAt": "2026-11-07T10:30:00+01:00",
+      "endsAt": "2026-11-07T12:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Gemeinschaftszentrum Wipkingen",
+        "address": "Breitensteinstrasse 19a, 8037 Zürich",
+        "city": "Zürich",
+        "distanceKm": 4
+      },
+      "price": null,
+      "capacity": 25,
+      "attendeeCount": 10
+    },
+    {
+      "id": "10",
+      "slug": "gaehnen-verboten-portraet-shooting",
+      "title": "Gähnen verboten: Porträt-Shooting",
+      "description": "Sechs Katzen, ein Fotograf, null Kooperation. Wir lernen Licht, Geduld und die hohe Kunst, genau dann abzudrücken, wenn das Gähnen gerade vorbei ist.",
+      "groupId": "meetcat-18",
+      "category": "fotowalk",
+      "format": "in-person",
+      "startsAt": "2026-11-07T11:00:00+01:00",
+      "endsAt": "2026-11-07T13:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Fotostudio West",
+        "address": "Hardstrasse 219, 8005 Zürich",
+        "city": "Zürich",
+        "distanceKm": 4
+      },
+      "price": 40,
+      "capacity": 6,
+      "attendeeCount": 6
+    },
+    {
+      "id": "11",
+      "slug": "boxenstopp-training",
+      "title": "Boxenstopp-Training",
+      "description": "Wer schneller sein will, muss trainieren. Mit Clicker und Leckerli üben wir Starts, Kurven und den perfekten Boxenstopp beim Futternapf.",
+      "groupId": "meetcat-02",
+      "category": "training",
+      "format": "in-person",
+      "startsAt": "2026-11-07T13:00:00+01:00",
+      "endsAt": "2026-11-07T15:00:00+01:00",
+      "recurring": true,
+      "location": {
+        "name": "Sporthalle Uster",
+        "address": "Brunnenstrasse 1, 8610 Uster",
+        "city": "Uster",
+        "distanceKm": 16
+      },
+      "price": 20,
+      "capacity": 8,
+      "attendeeCount": 1
+    },
+    {
+      "id": "12",
+      "slug": "umhang-werkstatt-der-superpfoten",
+      "title": "Umhang-Werkstatt der Superpfoten",
+      "description": "Jede Heldin braucht einen Umhang, und dieser hier wird aus alten Vorhängen genäht. Wir schneiden, wir nähen, und am Ende posieren wir dramatisch auf dem Kratzbaum.",
+      "groupId": "meetcat-15",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-07T14:00:00+01:00",
+      "endsAt": "2026-11-07T16:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Nähatelier Wiedikon",
+        "address": "Birmensdorferstrasse 80, 8003 Zürich",
+        "city": "Zürich",
+        "distanceKm": 3
+      },
+      "price": 12,
+      "capacity": 14,
+      "attendeeCount": 4
+    },
+    {
+      "id": "13",
+      "slug": "nicht-jede-pflanze-ist-ein-salat",
+      "title": "Nicht jede Pflanze ist ein Salat",
+      "description": "Die Monstera hat uns angefleht, diesen Abend zu organisieren. Eine Gärtnerin zeigt, welche Pflanzen katzensicher sind und welche besser aufs oberste Regal gehören.",
+      "groupId": "meetcat-16",
+      "category": "gesundheit",
+      "format": "in-person",
+      "startsAt": "2026-11-07T15:00:00+01:00",
+      "endsAt": "2026-11-07T16:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Stadtgärtnerei",
+        "address": "Sackzelg 25, 8047 Zürich",
+        "city": "Zürich",
+        "distanceKm": 5
+      },
+      "price": null,
+      "capacity": 20,
+      "attendeeCount": 2
+    },
+    {
+      "id": "14",
+      "slug": "sternennacht-auf-dem-uetliberg",
+      "title": "Sternennacht auf dem Uetliberg",
+      "description": "Die Sterne über dem Uetliberg sind echt, das Fernrohr ist geliehen, und die Mission ist klar: einmal den Saturn sehen, bevor die Katze das Stativ umwirft.",
+      "groupId": "meetcat-01",
+      "category": "outdoor",
+      "format": "in-person",
+      "startsAt": "2026-11-07T19:00:00+01:00",
+      "endsAt": "2026-11-07T22:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Bahnhof Uetliberg",
+        "address": "Uetliberg, 8143 Stallikon",
+        "city": "Zürich",
+        "distanceKm": 8
+      },
+      "price": null,
+      "capacity": 10,
+      "attendeeCount": 9
+    },
+    {
+      "id": "15",
+      "slug": "nachtschicht-in-der-erfinderwerkstatt",
+      "title": "Nachtschicht in der Erfinderwerkstatt",
+      "description": "Es begann als harmlose Bastelstunde und endete mit einem Leckerli-Katapult, das jede Hausordnung sprengt. Bring Karton, Klebeband und eine gesunde Portion Grössenwahn mit.",
+      "groupId": "meetcat-07",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-07T18:00:00+01:00",
+      "endsAt": "2026-11-07T21:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Tüftelwerk Winterthur",
+        "address": "Technikumstrasse 9, 8400 Winterthur",
+        "city": "Winterthur",
+        "distanceKm": 24
+      },
+      "price": 25,
+      "capacity": 10,
+      "attendeeCount": 8
+    },
+    {
+      "id": "16",
+      "slug": "ballonstart-bei-sonnenaufgang",
+      "title": "Ballonstart bei Sonnenaufgang",
+      "description": "Wir steigen in den Korb, der Brenner faucht, und unten am Ufer wird die Welt immer kleiner. Die Katzen bleiben am Boden und schauen zu – sie halten das Ganze für eine sehr mutige, aber schlechte Idee.",
+      "groupId": "meetcat-17",
+      "category": "outdoor",
+      "format": "in-person",
+      "startsAt": "2026-11-08T07:30:00+01:00",
+      "endsAt": "2026-11-08T10:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Seeufer Uster",
+        "address": "Seestrasse 7, 8610 Uster",
+        "city": "Uster",
+        "distanceKm": 16
+      },
+      "price": 60,
+      "capacity": 8,
+      "attendeeCount": 5
+    },
+    {
+      "id": "17",
+      "slug": "basilikum-gespraeche-im-gartencafe",
+      "title": "Basilikum-Gespräche im Gartencafé",
+      "description": "Bei Zopf und Kräutertee reden wir über Basilikum, Katzengras und die Frage, warum die Katze immer genau die eine Pflanze anknabbert, die man am meisten mag.",
+      "groupId": "meetcat-16",
+      "category": "katzencafe",
+      "format": "in-person",
+      "startsAt": "2026-11-08T09:30:00+01:00",
+      "endsAt": "2026-11-08T11:30:00+01:00",
+      "recurring": true,
+      "location": {
+        "name": "Gartencafé Seefeld",
+        "address": "Seefeldstrasse 90, 8008 Zürich",
+        "city": "Zürich",
+        "distanceKm": 2
+      },
+      "price": 28,
+      "capacity": 20,
+      "attendeeCount": 12
+    },
+    {
+      "id": "18",
+      "slug": "deckenburg-sonntag",
+      "title": "Deckenburg-Sonntag",
+      "description": "Zwei Stühle, drei Wolldecken und eine Lichterkette: Mehr braucht keine Expedition. Wir bauen das gemütlichste Lager der Stadt und erzählen Geschichten, bis jemand schnurrend einschläft.",
+      "groupId": "meetcat-10",
+      "category": "spieltreff",
+      "format": "in-person",
+      "startsAt": "2026-11-08T10:00:00+01:00",
+      "endsAt": "2026-11-08T12:00:00+01:00",
+      "recurring": true,
+      "location": {
+        "name": "Katzenstube Kreis 4",
+        "address": "Langstrasse 120, 8004 Zürich",
+        "city": "Zürich",
+        "distanceKm": 2
+      },
+      "price": null,
+      "capacity": 16,
+      "attendeeCount": 13
+    },
+    {
+      "id": "19",
+      "slug": "neue-crew-gesucht-adoptions-nachmittag",
+      "title": "Neue Crew gesucht: Adoptions-Nachmittag",
+      "description": "Die Sofa-Piraten suchen Verstärkung. Lerne Katzen aus dem Tierheim kennen, die bereit sind, mit dir das Wohnzimmer zu erobern. Die Schatzkarte gibt es gratis dazu.",
+      "groupId": "meetcat-04",
+      "category": "adoption",
+      "format": "in-person",
+      "startsAt": "2026-11-08T11:00:00+01:00",
+      "endsAt": "2026-11-08T15:00:00+01:00",
+      "recurring": true,
+      "location": {
+        "name": "Tierheim Pfötli",
+        "address": "Riedenerstrasse 1, 8305 Dietlikon",
+        "city": "Dietlikon",
+        "distanceKm": 11
+      },
+      "price": null,
+      "capacity": 80,
+      "attendeeCount": 56
+    },
+    {
+      "id": "20",
+      "slug": "gleis-3-katze-an-bord-modellbahn-sonntag",
+      "title": "Gleis 3, Katze an Bord: Modellbahn-Sonntag",
+      "description": "Die Züge fahren, die Schranken senken sich, und auf Gleis 3 liegt eine Katze quer. Wir bauen Strecken, stellen Weichen und üben den wichtigsten Satz jeder Modellbahn: «Bitte nicht die Lok anknabbern.»",
+      "groupId": "meetcat-19",
+      "category": "spieltreff",
+      "format": "in-person",
+      "startsAt": "2026-11-08T14:00:00+01:00",
+      "endsAt": "2026-11-08T17:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Modellbahnclub Uster",
+        "address": "Bahnhofstrasse 20, 8610 Uster",
+        "city": "Uster",
+        "distanceKm": 16
+      },
+      "price": 8,
+      "capacity": 20,
+      "attendeeCount": 11
+    },
+    {
+      "id": "21",
+      "slug": "fotowalk-durchs-niederdorf",
+      "title": "Fotowalk durchs Niederdorf",
+      "description": "Wir ziehen durch die Gassen, jagen das Licht und versuchen, die Altstadt so zu fotografieren, wie eine Katze sie sieht: von unten, sehr nah und voller Misstrauen.",
+      "groupId": "meetcat-18",
+      "category": "fotowalk",
+      "format": "in-person",
+      "startsAt": "2026-11-08T14:00:00+01:00",
+      "endsAt": "2026-11-08T16:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Treffpunkt Grossmünster",
+        "address": "Grossmünsterplatz, 8001 Zürich",
+        "city": "Zürich",
+        "distanceKm": 1
+      },
+      "price": null,
+      "capacity": 15,
+      "attendeeCount": 7
+    },
+    {
+      "id": "22",
+      "slug": "mehl-aus-dem-fell-pflege-nach-dem-backen",
+      "title": "Mehl aus dem Fell: Pflege nach dem Backen",
+      "description": "Nach dem Backen ist vor dem Bürsten: Eine Groomerin zeigt, wie Mehl, Teigreste und Zuckerguss stressfrei aus dem Fell kommen. Die Katze wird es dir nicht danken, aber sie wird glänzen.",
+      "groupId": "meetcat-03",
+      "category": "fellpflege",
+      "format": "in-person",
+      "startsAt": "2026-11-09T18:30:00+01:00",
+      "endsAt": "2026-11-09T20:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Pfotenpflege Studio",
+        "address": "Marktgasse 12, 8400 Winterthur",
+        "city": "Winterthur",
+        "distanceKm": 24
+      },
+      "price": 25,
+      "capacity": 10,
+      "attendeeCount": 4
+    },
+    {
+      "id": "23",
+      "slug": "tauchgang-im-livestream-unterwasserwelten",
+      "title": "Tauchgang im Livestream: Unterwasserwelten",
+      "description": "Wir schalten die Kamera ein und tauchen ab: Korallen, Kraken und ein U-Boot aus einem Waschmittelkarton. Dein Wohnzimmer bleibt trocken, versprochen. Ziemlich sicher.",
+      "groupId": "meetcat-05",
+      "category": "online",
+      "format": "online",
+      "startsAt": "2026-11-09T19:00:00+01:00",
+      "endsAt": "2026-11-09T20:00:00+01:00",
+      "recurring": false,
+      "location": null,
+      "price": null,
+      "capacity": 60,
+      "attendeeCount": 23
+    },
+    {
+      "id": "24",
+      "slug": "baustelle-wohnzimmer-bagger-aus-karton",
+      "title": "Baustelle Wohnzimmer: Bagger aus Karton",
+      "description": "Der Bagger ist aus Karton, die Baustelle ist dein Teppich, und die Bauleitung schläft in der Schaufel. Wir bauen trotzdem weiter, denn Termine sind Termine.",
+      "groupId": "meetcat-13",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-10T18:30:00+01:00",
+      "endsAt": "2026-11-10T20:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Makerspace Oerlikon",
+        "address": "Schaffhauserstrasse 359, 8050 Zürich",
+        "city": "Zürich",
+        "distanceKm": 6
+      },
+      "price": 10,
+      "capacity": 12,
+      "attendeeCount": 11
+    },
+    {
+      "id": "25",
+      "slug": "spurensicherung-fuer-einsteiger",
+      "title": "Spurensicherung für Einsteiger",
+      "description": "Wir lernen, Pfotenspuren zu lesen, Fellhaare zu sichern und Alibis auseinanderzunehmen. Alles bequem vom Sofa aus, wo ohnehin die meisten Tatorte liegen.",
+      "groupId": "meetcat-09",
+      "category": "training",
+      "format": "online",
+      "startsAt": "2026-11-10T19:00:00+01:00",
+      "endsAt": "2026-11-10T20:00:00+01:00",
+      "recurring": false,
+      "location": null,
+      "price": null,
+      "capacity": 40,
+      "attendeeCount": 8
+    },
+    {
+      "id": "26",
+      "slug": "mondlandung-im-pappmache-krater",
+      "title": "Mondlandung im Pappmaché-Krater",
+      "description": "Wir bauen eine Mondlandschaft aus Pappmaché, schicken einen Rover hinein und warten auf Funksignale. Die Kommandantin schläft im Krater. Houston, wir haben ein Nickerchen.",
+      "groupId": "meetcat-20",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-11T18:30:00+01:00",
+      "endsAt": "2026-11-11T20:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Tüftellabor Bern",
+        "address": "Spitalgasse 4, 3011 Bern",
+        "city": "Bern",
+        "distanceKm": 95
+      },
+      "price": 15,
+      "capacity": 15,
+      "attendeeCount": 4
+    },
+    {
+      "id": "27",
+      "slug": "tamburin-workshop-fuer-laermempfindliche",
+      "title": "Tamburin-Workshop für Lärmempfindliche",
+      "description": "Rhythmus kann man lernen, Lautstärke leider auch. Wir trommeln, rasseln und finden gemeinsam heraus, wie laut ein Tamburin sein darf, bevor die Nachbarn klingeln.",
+      "groupId": "meetcat-11",
+      "category": "workshop",
+      "format": "in-person",
+      "startsAt": "2026-11-11T19:00:00+01:00",
+      "endsAt": "2026-11-11T20:30:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Musikschule Kreis 6",
+        "address": "Universitätstrasse 60, 8006 Zürich",
+        "city": "Zürich",
+        "distanceKm": 2
+      },
+      "price": 18,
+      "capacity": 12,
+      "attendeeCount": 5
+    },
+    {
+      "id": "28",
+      "slug": "papierflieger-meisterschaft",
+      "title": "Papierflieger-Meisterschaft",
+      "description": "Falten, werfen, analysieren, verzweifeln. Wer seinen Flieger an der Katze vorbei ins Ziel bringt, ist Champion – und muss mit einer Revanche rechnen.",
+      "groupId": "meetcat-08",
+      "category": "spieltreff",
+      "format": "in-person",
+      "startsAt": "2026-11-12T19:00:00+01:00",
+      "endsAt": "2026-11-12T21:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Turnhalle St. Georgen",
+        "address": "Multergasse 3, 9000 St. Gallen",
+        "city": "St. Gallen",
+        "distanceKm": 78
+      },
+      "price": null,
+      "capacity": 15,
+      "attendeeCount": 4
+    },
+    {
+      "id": "29",
+      "slug": "pitch-night-das-naechste-leckerli-startup",
+      "title": "Pitch Night: Das nächste Leckerli-Startup",
+      "description": "Fünf Minuten, eine Idee und eine Jury aus Katzen mit sehr hohen Ansprüchen. Pitche dein Leckerli-Startup, bevor jemand auf der Tastatur einschläft.",
+      "groupId": "meetcat-14",
+      "category": "online",
+      "format": "online",
+      "startsAt": "2026-11-12T19:00:00+01:00",
+      "endsAt": "2026-11-12T20:30:00+01:00",
+      "recurring": false,
+      "location": null,
+      "price": null,
+      "capacity": 50,
+      "attendeeCount": 14
+    },
+    {
+      "id": "30",
+      "slug": "erste-hilfe-fuer-katzen",
+      "title": "Erste Hilfe für Katzen",
+      "description": "Ernstes Thema, gute Stimmung: Eine Tierärztin zeigt, wie man Pfoten verbindet, den Puls fühlt und erkennt, wann es sofort in die Praxis geht. Kaffee gibt es für die Menschen.",
+      "groupId": "meetcat-12",
+      "category": "gesundheit",
+      "format": "in-person",
+      "startsAt": "2026-11-13T18:00:00+01:00",
+      "endsAt": "2026-11-13T20:00:00+01:00",
+      "recurring": false,
+      "location": {
+        "name": "Tierklinik Altstetten",
+        "address": "Badenerstrasse 600, 8048 Zürich",
+        "city": "Zürich",
+        "distanceKm": 5
+      },
+      "price": 60,
+      "capacity": 18,
+      "attendeeCount": 18
+    }
+  ]
+}

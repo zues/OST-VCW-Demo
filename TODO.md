@@ -1,18 +1,13 @@
 # TODO
 
-Stand: 01.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
+Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 
 ## Nächste Schritte
 
-- [ ] **Figma-Bilder Übersicht reparieren** – Karten 3, 4 und 8 sind verpixelt (Base64 bei der
-      Übertragung beschädigt), Karte 6 zeigt noch das Bild von Karte 2. Am einfachsten die Bilder
-      `03.jpg`, `04.jpg`, `06.jpg`, `08.jpg` aus `public/images/meetups/` manuell
-      auf die Aspect-Ratio-Ebene der Karten ziehen. Gleiches gilt für den Screen „Übersicht –
-      Gruppen“ (01.11.2026): Clicker Cats Schweiz (`06.jpg`) und Leinenkatzen Ostschweiz (`10.jpg`)
-      haben dort Ersatzbilder.
-- [ ] **Figma-Bilder Detailseite** – „Das könnte dir auch gefallen“ zeigt Platzhalterbilder;
-      richtig wären `27.jpg`, `16.jpg`, `24.jpg`. Avatare und Gruppenbild sind ebenfalls
-      wiederverwendete Bilder (keine 1:1-Zuordnung zu den Mock-Daten).
+- [ ] **Figma-Inhalte auf die neuen Daten umstellen** (seit 02.11.2026): Die Screens zeigen noch die
+      alten Meetups, Gruppen und cataas-Bilder (teils verpixelt). Neue Texte in `src/data/meetcat.json`,
+      Bilder in `public/images/meetcat/` – am einfachsten per Drag-and-drop auf die Aspect-Ratio-Ebenen
+      (Base64-Upload über die Bridge beschädigt grosse Bilder).
 - [x] **Git-Repositories** (02.11.2026): `musterloesung/` → https://github.com/zues/OST-VCW-Demo,
       `starter/` → https://github.com/zues/OST-VC-Base (beide öffentlich, Branch `main`).
       `KONZEPT.md`, `TODO.md` und `contracts/` liegen seit 02.11.2026 im Demo-Repo.
@@ -90,8 +85,8 @@ Stand: 01.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 ## Starter-Repo
 
 - [ ] shadcn-Komponenten installieren, die der Prototyp nutzt (gleiche Liste wie Musterlösung).
-- [ ] Mock-Daten (`src/data/`), Typen, Hilfsfunktionen (`lib/format.ts`, `lib/filter-meetups.ts`)
-      und Bilder übernehmen.
+- [x] Mock-Daten `src/data/meetcat.json` und Bilder `public/images/meetcat/` übernommen (02.11.2026).
+- [ ] Typen und Hilfsfunktionen (`lib/format.ts`, `lib/filter-meetups.ts`) übernehmen?
 - [ ] Leere Seiten `/` und `/meetups/[slug]` mit TODO-Hinweisen anlegen.
 - [ ] Theme-Varianten vorbereiten: MeetCat-Theme (aus Figma) und neutrales shadcn-Default für
       eigene Designs.
@@ -104,8 +99,8 @@ Stand: 01.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 - [ ] **Lizenz klären:** Das shadcndesign-Kit darf nicht weitergegeben werden. Bei
       shadcndesign.com/help anfragen, ob View-Zugriff für Studierende erlaubt ist – sonst Alternative
       (z. B. Obra shadcn/ui Community Edition) für die Studierenden-Datei.
-- [ ] **Bildrechte:** Katzenbilder (cataas.com, Lizenz unklar) durch Unsplash-Bilder oder eigene
-      Fotos ersetzen, bevor die Vorlage verteilt wird – liegen seit 02.11. öffentlich im Demo-Repo.
+- [x] **Bildrechte** (02.11.2026): cataas-Bilder entfernt, ersetzt durch die 20 MeetCat-Bilder von Alex
+      (Demo und Starter).
 - [ ] Vorwissen und Zeitrahmen der Studierenden festlegen → Aufgabenstufen anpassen.
 - [ ] Optional: Deployment (z. B. Vercel), damit Gruppen eine Live-URL bekommen.
 

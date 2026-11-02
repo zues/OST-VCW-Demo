@@ -7,6 +7,8 @@ export type Member = {
 export type Group = {
   id: string
   name: string
+  topic: string
+  description: string
   rating: number
   imageUrl: string
 }

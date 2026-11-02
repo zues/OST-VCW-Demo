@@ -4,10 +4,22 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 
 ## Nächste Schritte
 
-- [ ] **Figma-Inhalte auf die neuen Daten umstellen** (seit 02.11.2026): Die Screens zeigen noch die
-      alten Meetups, Gruppen und cataas-Bilder (teils verpixelt). Neue Texte in `src/data/meetcat.json`,
-      Bilder in `public/images/meetcat/` – am einfachsten per Drag-and-drop auf die Aspect-Ratio-Ebenen
-      (Base64-Upload über die Bridge beschädigt grosse Bilder).
+- [ ] **Figma-Inhalte auf die neuen Daten umstellen** (02.11.2026, grösstenteils erledigt):
+  - [x] Alle 20 Bilder sind in der Datei. Die Hashes stehen in
+        [contracts/figma-images.json](contracts/figma-images.json); der Weg ist in
+        [FIGMA-ARBEITSWEISE.md](contracts/FIGMA-ARBEITSWEISE.md#bilder-hochladen) beschrieben.
+  - [x] Übersicht Desktop und Mobile, Gruppen / Desktop, Detail Desktop und Mobile sowie die Dialoge
+        in „Overlays“ zeigen dieselben Inhalte wie die App (Detail = „Countdown im Kinderzimmer: Raketenbau“).
+  - [ ] **Standardinhalte der Komponenten** in der Section „MeetCat Komponenten“: MeetupCard, GroupCard,
+        MeetupActionBar (alle Varianten), Frame „MeetupActionBar – Zustände“, MeetupAttendees und
+        AttendDialog zeigen evtl. noch „Fellpflege-Basics …“. Das Skript dafür ist beim Plugin-Absturz
+        abgebrochen, der Zustand ist also unklar. Prüfen und auf Meetup 1 / Mission Miau umstellen.
+  - [ ] **Mobile-Screen „Übersicht – Gruppen / Mobile“** bauen: Kopie von „Übersicht / Mobile“, Platz
+        x 1640 / y 2000. Tabs mit aktivem „Gruppen“, Titel „Gruppen in der Nähe von Zürich, CH“, keine
+        Filterleiste und kein Carousel, GroupCards einspaltig mit den ersten Gruppen
+        (Schnurrlock Holmes, Schnurr & Knips, Das Blubberlabor, Camping unterm Sofazelt).
+  - [ ] Die 20 Upload-Frames `27502:5650`–`27502:5669` (oben rechts auf der Page) löschen oder in eine
+        Section „Bilder“ verschieben.
 - [x] **Git-Repositories** (02.11.2026): `musterloesung/` → https://github.com/zues/OST-VCW-Demo,
       `starter/` → https://github.com/zues/OST-VC-Base (beide öffentlich, Branch `main`).
       `KONZEPT.md`, `TODO.md` und `contracts/` liegen seit 02.11.2026 im Demo-Repo.

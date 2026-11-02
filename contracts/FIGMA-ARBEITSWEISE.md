@@ -9,7 +9,7 @@ gearbeitet wird und welche Stolpersteine es dabei gibt. Gesammelt beim Bau der S
 - Alles für MeetCat liegt auf der Page **„MeetCat“** (`27459:595938`). Bitte nicht auf mehrere Pages verteilen.
 - Oben liegen die Desktop-Screens: „Übersicht / Desktop“ `27459:595939`, „Übersicht – Gruppen / Desktop“ `27477:608285`
   und „Detail / Desktop“ `27462:597891`.
-- Darunter liegen die Mobile-Screens mit 390 px: „Übersicht / Mobile“ `27477:617775` und „Detail / Mobile“ `27477:620468`.
+- Desktop- und Mobile-Screens (390 px): „Übersicht / Desktop“ x −1640 und „Übersicht / Mobile“ `27477:617775` x 525 (beide y 0), „Detail / Mobile“ `27477:620468` unter „Detail / Desktop“ (y 2000). Alex hat die Anordnung am 02.11.2026 selbst angepasst.
 - Rechts liegen die Section „Overlays“ `27462:601792` und die Section „MeetCat Komponenten“ `27459:596894`.
   Dort sind das Logo „MeetCat Logo“ `27477:623867` und alle eigenen Komponenten.
 - **Responsive** heisst immer: eine Variante `Breakpoint=Desktop/Mobile` im selben Component Set.
@@ -41,6 +41,21 @@ Bevorzugt wird figma-console (Desktop Bridge). Das offizielle Figma-Plugin und C
   - `figma.createImageAsync(url)` scheitert an jeder URL.
   - `figma_set_image_fill` nimmt Base64 an und liefert einen `imageHash`. Den Hash danach wiederverwenden.
   - Langes Base64 wird bei der Übertragung beschädigt. Fotos am besten per Drag-and-drop setzen.
+- **Bilder hochladen:** <a id="bilder-hochladen"></a>
+  - Geht zuverlässig mit dem offiziellen Figma-MCP (`claude_ai_Figma`).
+    1. Mit `create_session` eine Session öffnen.
+    2. `upload_assets` mit `count` und `currentPageId` aufrufen.
+    3. Jede Datei per `curl -F "file=@bild.jpg;type=image/jpeg" <submitUrl>` hochladen.
+  - Die Antwort enthält den `imageHash`, auf der Page entsteht ein Frame mit dem Bild.
+  - In figma-console den Hash dann per `node.fills = [{ type: 'IMAGE', imageHash, scaleMode: 'FILL' }]` setzen.
+  - Die Hashes der 20 MeetCat-Bilder (auf 800 px verkleinert) stehen in [figma-images.json](figma-images.json).
+- **Grosse Skripte:**
+  - Ein Durchlauf über das ganze Component Set `MeetupActionBar` (über 7000 Knoten) dauert sehr lange.
+    Danach ist das Plugin am 02.11.2026 abgestürzt.
+  - Deshalb pro Variante oder Instanz arbeiten.
+  - Ist die Bridge mit mehreren Dateien verbunden, vor jedem Aufruf prüfen, dass „OST“ aktiv ist (`figma_list_open_files`).
+- `findOne`/`findAll` und das Lesen von `fills` können auf Instanzen mit getauschten Icons abstürzen.
+  Deshalb mit einem eigenen Walker mit try/catch durchlaufen und Icon-Instanzen überspringen.
 - **Kit-Struktur:**
   - Bilder sind der Fill der `Aspect Ratio`-Instanz, Avatare tragen den Fill auf der `Avatar`-Instanz.
   - Card, Tabs, Avatar Group und Empty haben echte SLOT-Nodes.

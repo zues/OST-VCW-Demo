@@ -1,0 +1,25 @@
+{
+  "note": "imageHash der MeetCat-Bilder in der Figma-Datei OST (la64IYsP0s5iqsJ2ltpf4T), hochgeladen am 02.11.2026 (800 px). Verwendung: node.fills = [{ type: 'IMAGE', imageHash, scaleMode: 'FILL' }]",
+  "images": {
+    "MeetCat-01-Astronaut.jpg": "4d557f9b0a1051050d71a7f806fb1d81185896fd",
+    "MeetCat-02-Rennfahrer.jpg": "aa9f59cb926034a6af7cd53fc28c936961f6b0bc",
+    "MeetCat-03-Baecker.jpg": "8159ab3e5b304c70a6cad12cf6565d5354a46540",
+    "MeetCat-04-Pirat.jpg": "66c7642262db0ad468a4142bc2acc772381fe4d8",
+    "MeetCat-05-U-Boot.jpg": "d5e2f1ef2700da059e66fbda70507180dc2e0a26",
+    "MeetCat-06-Wetterreporter.jpg": "8d2f1253189073b1c2b393a7f4bcd69aaed98ac9",
+    "MeetCat-07-Erfinder.jpg": "fe19c3e4a118d9c3e442698c41a0521b9a99fc58",
+    "MeetCat-08-Pilot.jpg": "8ae52849804a58114789cc22f6c5890bec34511c",
+    "MeetCat-09-Detektiv.jpg": "94921f816a73b879014c6b402e1e701f73df5f83",
+    "MeetCat-10-Camping.jpg": "2252ea817beb19d7673d17511da9375df516717c",
+    "MeetCat-11-Rockstar.jpg": "3f5c4812b8dabe2083ad7ca89314b20f1615d193",
+    "MeetCat-12-Labor.jpg": "251f1b9e23f843ae5b80888aafb9361aad33e910",
+    "MeetCat-13-Baggerfahrer.jpg": "d0de5d7f29b9262e70d41bab6665435fc0ede17c",
+    "MeetCat-14-Chef.jpg": "b438a84e483c5c2364d6b63f98d3aa919b412136",
+    "MeetCat-15-Superheld.jpg": "9386e9c7566686d631b71bb44526dc14c3df2e44",
+    "MeetCat-16-Gaertner.jpg": "f910f7a63c2a53ab546b674b754316ef86bceeb8",
+    "MeetCat-17-Ballonfahrer.jpg": "bbe611ae9bba31d180269c05e64e8a15e5c1c71c",
+    "MeetCat-18-Fotograf.jpg": "9cde2e295e79caffc5049a3c82bae3b299dc69ac",
+    "MeetCat-19-Lokfuehrer.jpg": "98349c1263b5b61c6563e744549fc7cfdc20ee0e",
+    "MeetCat-20-Mondforscher.jpg": "7ab35ff7b1ce251a14a7d171779558b95b8768de"
+  }
+}

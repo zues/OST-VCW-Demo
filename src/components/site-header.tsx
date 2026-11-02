@@ -124,8 +124,10 @@ export function SiteHeader({ query = "" }: { query?: string }) {
             <MenuIcon />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48">
-            <DropdownMenuItem>{t.header.login}</DropdownMenuItem>
-            <DropdownMenuItem>{t.header.signup}</DropdownMenuItem>
+            <DropdownMenuGroup>
+              <DropdownMenuItem>{t.header.login}</DropdownMenuItem>
+              <DropdownMenuItem>{t.header.signup}</DropdownMenuItem>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuLabel>{t.header.location}</DropdownMenuLabel>

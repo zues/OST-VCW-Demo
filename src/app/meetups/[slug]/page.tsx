@@ -15,6 +15,7 @@ import { getMeetupBySlug, getRelatedMeetups, meetups } from "@/data/meetups"
 import type { Meetup } from "@/data/types"
 import { formatMeetupDateRange, formatPrice } from "@/lib/format"
 import { getPreferences } from "@/lib/get-preferences"
+import { cn } from "@/lib/utils"
 import { MeetupActionBar } from "@/components/meetup-action-bar"
 import { MeetupAttendees } from "@/components/meetup-attendees"
 import { MeetupCard } from "@/components/meetup-card"
@@ -77,7 +78,7 @@ function Rating({ value, label }: { value: number; label: string }) {
         {Array.from({ length: 5 }, (_, i) => (
           <StarIcon
             key={i}
-            className={`size-3.5 ${i < Math.round(value) ? "fill-current" : ""}`}
+            className={cn("size-3.5", i < Math.round(value) && "fill-current")}
           />
         ))}
       </span>
@@ -143,7 +144,7 @@ async function MeetupDetail({ meetup }: { meetup: Meetup }) {
             <section className="flex flex-col gap-4">
               <h2 className="font-heading text-xl font-semibold">{t.detail.details}</h2>
               <p className="leading-relaxed">{meetup.description}</p>
-              <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+              <ul className="flex list-disc flex-col gap-1 pl-5 text-muted-foreground">
                 <li>
                   {t.detail.cost}:{" "}
                   {meetup.price === null ? t.detail.free : formatPrice(meetup.price)}

@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "meetcat/contract.schema.json",
+  "title": "MeetCat Component Contract",
+  "description": "Verbindet eine Figma-Komponente (shadcn/ui kit oder eigene Komposition) mit der shadcn/ui-Komponente im Code. Angelehnt an southleft/ds-contracts-poc, aber bewusst schlank.",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "code",
+    "figma",
+    "parts"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Name der shadcn-Komponente, z. B. 'button'."
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "verified"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "shadcn",
+        "composition"
+      ],
+      "default": "shadcn",
+      "description": "shadcn = Komponente aus components/ui; composition = eigene Komponente, die nur aus shadcn-Komponenten zusammengesetzt ist."
+    },
+    "uses": {
+      "type": "array",
+      "description": "Nur bei composition: IDs der Contracts der verwendeten shadcn-Komponenten.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scannedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "code": {
+      "type": "object",
+      "required": [
+        "file"
+      ],
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "Pfad relativ zum Next.js-Projekt."
+        },
+        "registry": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "figma": {
+      "type": "object",
+      "required": [
+        "fileKey",
+        "page"
+      ],
+      "properties": {
+        "fileKey": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "parts": {
+      "type": "array",
+      "description": "Je eine Figma-Komponente bzw. ein Component Set und ihr Gegenstück im Code.",
+      "items": {
+        "type": "object",
+        "required": [
+          "figma",
+          "code",
+          "props"
+        ],
+        "properties": {
+          "figma": {
+            "type": "object",
+            "required": [
+              "name",
+              "type",
+              "id",
+              "key"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "COMPONENT",
+                  "COMPONENT_SET"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "key": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "code": {
+            "description": "null = Figma-Beispiel ohne eigene Code-Komponente.",
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "export": {
+                "type": "string",
+                "description": "Code-Export(s), mehrere mit „|“ getrennt, z. B. 'CarouselNext | CarouselPrevious'."
+              },
+              "call": {
+                "type": "string",
+                "description": "Wird im Code per Funktionsaufruf statt als Komponente verwendet, z. B. 'toast()'."
+              },
+              "with": {
+                "type": "string",
+                "description": "Teil, das im Code immer zusammen mit dem Export verwendet wird, z. B. '<ScrollBar orientation=\"horizontal\" />'."
+              },
+              "internal": {
+                "type": "string",
+                "description": "Figma-Komponente entspricht einem intern gerenderten Element ohne eigenen Export, z. B. dem Schliessen-Button von DialogContent."
+              }
+            },
+            "additionalProperties": false
+          },
+          "note": {
+            "type": "string"
+          },
+          "props": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/prop"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "codeOnly": {
+      "type": "array",
+      "description": "Code-Exports ohne eigene Figma-Komponente.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "codeOnlyValues": {
+      "type": "array",
+      "description": "Prop-Werte im Code ohne Figma-Gegenstück.",
+      "items": {
+        "type": "object",
+        "required": [
+          "export",
+          "prop",
+          "values"
+        ],
+        "properties": {
+          "export": {
+            "type": "string"
+          },
+          "prop": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "valuesFrom": {
+            "$ref": "#/$defs/prop/properties/code/properties/valuesFrom"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "severity",
+          "message"
+        ],
+        "properties": {
+          "severity": {
+            "enum": [
+              "info",
+              "warn",
+              "error"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "drift": {
+            "type": "string",
+            "pattern": "^D-\\d{3}$",
+            "description": "ID in DRIFT.md."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "layers": {
+      "type": "array",
+      "description": "Nur bei composition: Figma-Ebene → Code-Element und Datenquelle.",
+      "items": {
+        "$ref": "#/$defs/layer"
+      }
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "prop": {
+      "type": "object",
+      "required": [
+        "figma",
+        "type",
+        "code"
+      ],
+      "properties": {
+        "figma": {
+          "type": "string",
+          "description": "Name der Figma-Property."
+        },
+        "type": {
+          "enum": [
+            "VARIANT",
+            "TEXT",
+            "BOOLEAN",
+            "INSTANCE_SWAP",
+            "SLOT"
+          ]
+        },
+        "figmaKey": {
+          "type": "string",
+          "description": "Interner Property-Key inkl. #id (für TEXT/BOOLEAN/SLOT/INSTANCE_SWAP)."
+        },
+        "code": {
+          "description": "Wie die Property im Code umgesetzt wird. null = nur in Figma.",
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "prop": {
+              "type": "string",
+              "description": "React-Prop, z. B. 'variant'."
+            },
+            "part": {
+              "type": "string",
+              "description": "Unterkomponente, z. B. 'CardTitle'."
+            },
+            "children": {
+              "type": "boolean"
+            },
+            "child": {
+              "type": "string",
+              "description": "JSX-Muster für ein Kind-Element."
+            },
+            "state": {
+              "type": "boolean",
+              "description": "Interaktionszustand (CSS/ARIA), keine Prop."
+            },
+            "composition": {
+              "type": "boolean",
+              "description": "Wert wählt eine andere Komposition."
+            },
+            "inherited": {
+              "type": "string",
+              "description": "Wert ergibt sich aus einer Eltern-Prop."
+            },
+            "valuesFrom": {
+              "type": "object",
+              "description": "Wo die Code-Werte definiert sind, falls nicht in der Datei selbst: andere ui-Komponente oder Paket (Typdefinitionen).",
+              "properties": {
+                "component": {
+                  "type": "string"
+                },
+                "package": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "value": {
+              "type": "string",
+              "description": "Fester Prop-Wert, wenn eine BOOLEAN-Property ein Teil mit bestimmtem Prop-Wert einblendet (z. B. Addon mit align=\"inline-start\")."
+            },
+            "expression": {
+              "type": "boolean",
+              "description": "Werte sind JSX-Ausdrücke (z. B. ratio={16/9}) statt String-Literale; Werte werden nicht gegen den Code geprüft."
+            },
+            "className": {
+              "type": "string",
+              "description": "Wird im Code über Klassen statt über eine Prop gelöst."
+            },
+            "argument": {
+              "type": "string",
+              "description": "Funktionsargument, z. B. 'toast(title)'."
+            },
+            "option": {
+              "type": [
+                "string",
+                "boolean"
+              ],
+              "description": "Option eines Funktionsaufrufs, z. B. 'description' bei toast(). true = die `values` sind die Optionsnamen."
+            },
+            "call": {
+              "type": [
+                "string",
+                "boolean"
+              ],
+              "description": "Funktionsaufruf statt Komponente, z. B. 'toast.success()'. true = die `values` sind die Funktionsnamen."
+            }
+          },
+          "additionalProperties": false
+        },
+        "values": {
+          "type": "object",
+          "description": "Figma-Wert → Code-Wert. null = kein Gegenstück im Code (bzw. Grundzustand bei States).",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "layer": {
+      "type": "object",
+      "required": [
+        "figma",
+        "code"
+      ],
+      "properties": {
+        "figma": {
+          "type": "string",
+          "description": "Ebenenpfad in der Figma-Komponente, z. B. 'Card › Card Title'."
+        },
+        "figmaId": {
+          "type": "string"
+        },
+        "figmaProp": {
+          "type": "string",
+          "description": "Property bzw. Override der Kit-Instanz inkl. #id, falls der Inhalt darüber gesetzt wird."
+        },
+        "code": {
+          "type": "object",
+          "properties": {
+            "part": {
+              "type": "string",
+              "description": "shadcn-Export, der im Code an dieser Stelle steht, z. B. 'CardTitle'."
+            },
+            "props": {
+              "type": "object",
+              "description": "Feste Props im Code, z. B. {\"variant\": \"secondary\"}.",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "element": {
+              "type": "string",
+              "description": "Anderes Element, z. B. 'next/image'."
+            }
+          },
+          "additionalProperties": false
+        },
+        "data": {
+          "type": "string",
+          "description": "Ausdruck, aus dem der Inhalt im Code kommt, z. B. 'meetup.title'."
+        },
+        "when": {
+          "type": "string",
+          "description": "Bedingung, unter der das Element im Code gerendert wird."
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

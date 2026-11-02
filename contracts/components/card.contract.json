@@ -1,0 +1,130 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "card",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/card.tsx",
+    "registry": "@shadcn/card",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Card"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Card",
+        "type": "COMPONENT_SET",
+        "id": "21123:292666",
+        "key": "743fba8aa62732fd30576f22eb01e6ccfb3e787c"
+      },
+      "code": {
+        "export": "Card"
+      },
+      "props": [
+        {
+          "figma": "Size",
+          "type": "VARIANT",
+          "code": {
+            "prop": "size"
+          },
+          "values": {
+            "default": "default",
+            "sm": "sm"
+          }
+        },
+        {
+          "figma": "Card Header",
+          "type": "BOOLEAN",
+          "figmaKey": "Card Header#21123:13",
+          "code": {
+            "part": "CardHeader"
+          }
+        },
+        {
+          "figma": "Card Title",
+          "type": "TEXT",
+          "figmaKey": "Card Title#21123:18",
+          "code": {
+            "part": "CardTitle",
+            "children": true
+          }
+        },
+        {
+          "figma": "Card Description",
+          "type": "TEXT",
+          "figmaKey": "Card Description#21123:19",
+          "code": {
+            "part": "CardDescription",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Action",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Action#21123:20",
+          "code": {
+            "part": "CardAction"
+          }
+        },
+        {
+          "figma": "Swap Action",
+          "type": "INSTANCE_SWAP",
+          "figmaKey": "Swap Action#21123:42",
+          "code": {
+            "part": "CardAction",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Image",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Image#21123:39",
+          "code": {
+            "child": "<img /> als erstes Kind von Card"
+          }
+        },
+        {
+          "figma": "Card Content",
+          "type": "SLOT",
+          "figmaKey": "Card Content#21349:46",
+          "code": {
+            "part": "CardContent"
+          }
+        },
+        {
+          "figma": "Card Footer",
+          "type": "BOOLEAN",
+          "figmaKey": "Card Footer#21665:0",
+          "code": {
+            "part": "CardFooter"
+          }
+        },
+        {
+          "figma": "Card Footer Content",
+          "type": "SLOT",
+          "figmaKey": "Card Footer Content#21349:49",
+          "code": {
+            "part": "CardFooter",
+            "children": true
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Vertikales Padding sitzt in Figma im Frame Card Header, im Code auf Card – nur Card Content = kein Abstand. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-034"
+    },
+    {
+      "severity": "info",
+      "message": "Slot-Richtung lässt sich auf Instanzen nicht überschreiben (Code: className=\"flex-row\"). – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-035"
+    }
+  ]
+}

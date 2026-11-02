@@ -1,0 +1,117 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "toggle",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/toggle.tsx",
+    "registry": "@shadcn/toggle",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Toggle"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Toggle",
+        "type": "COMPONENT_SET",
+        "id": "124:27",
+        "key": "0abba261a26161fc08e2cbe65aee09cac0343d60"
+      },
+      "code": {
+        "export": "Toggle"
+      },
+      "props": [
+        {
+          "figma": "Toggle Text",
+          "type": "TEXT",
+          "figmaKey": "Toggle Text#132:4",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Text",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Text#132:29",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Icon#501:12",
+          "code": {
+            "child": "<Icon />"
+          }
+        },
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "prop": "variant"
+          },
+          "values": {
+            "Default": "default",
+            "Outline": "outline"
+          }
+        },
+        {
+          "figma": "Size",
+          "type": "VARIANT",
+          "code": {
+            "prop": "size"
+          },
+          "values": {
+            "Default": "default",
+            "sm": "sm",
+            "lg": "lg"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":hover",
+            "Focus": ":focus-visible",
+            "Pressed": "pressed (aria-pressed)",
+            "Disabled": "disabled"
+          }
+        },
+        {
+          "figma": "Layout",
+          "type": "VARIANT",
+          "code": {
+            "className": "h-auto flex-col gap-1.5 px-3 py-2 (Icon size-5, Text text-xs)"
+          },
+          "values": {
+            "Horizontal": null,
+            "Vertical": "className=\"h-auto flex-col …\""
+          },
+          "note": "Am 01.11.2026 per Claude Code ergänzt (D-019), nur für Variant=Default, Size=lg. Nicht Teil des originalen Kits."
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "toggleVariants"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "'Pressed' ist in Figma ein State, im Code die Prop pressed."
+    },
+    {
+      "severity": "info",
+      "message": "State=Pressed färbt in Figma nur den Hintergrund, im Code zusätzlich gefülltes Icon. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-038"
+    }
+  ]
+}

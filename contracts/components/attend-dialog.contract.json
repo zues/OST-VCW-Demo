@@ -1,0 +1,116 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "attend-dialog",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/attend-dialog.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "dialog",
+    "item",
+    "button"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "AttendDialog",
+        "type": "COMPONENT_SET",
+        "id": "27477:607953",
+        "key": "a483f3d3452cf0545d928c1bc4262565c2d878dd"
+      },
+      "code": {
+        "export": "AttendDialog"
+      },
+      "note": "Komponente um eine Kit-`Dialog`-Instanz (Overlay). Auslöser kommt als Prop `trigger`. Bei vollem Meetup Texte für die Warteliste.",
+      "props": [
+        {
+          "figma": "Plätze",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Frei": null,
+            "Voll": "isFull"
+          },
+          "note": "Abgeleitet: `attendees.length >= capacity`. Voll → Titel `t.attend.titleWaitlist`, Button `t.attend.confirmWaitlist`. Variante Voll per Claude Code ergänzt am 01.11.2026 (D-051)."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Dialog",
+      "code": {
+        "part": "DialogContent"
+      },
+      "figmaId": "27462:601794"
+    },
+    {
+      "figma": "Dialog › Title",
+      "code": {
+        "part": "DialogTitle"
+      },
+      "figmaProp": "Title Text#118:5",
+      "data": "isFull ? t.attend.titleWaitlist : t.attend.title"
+    },
+    {
+      "figma": "Dialog › Description",
+      "code": {
+        "part": "DialogDescription"
+      },
+      "figmaProp": "Description Text#118:15",
+      "data": "meetup.title"
+    },
+    {
+      "figma": "Dialog Content › ItemGroup › Item (Datum, Ort)",
+      "code": {
+        "part": "Item",
+        "props": {
+          "variant": "muted",
+          "size": "sm"
+        }
+      },
+      "data": "formatMeetupDateRange(…, lang), meetup.location"
+    },
+    {
+      "figma": "Dialog Footer › Button „Abbrechen“",
+      "code": {
+        "part": "DialogClose"
+      },
+      "data": "t.attend.abort",
+      "note": "Rendert `Button variant=\"outline\"`."
+    },
+    {
+      "figma": "Dialog Footer › Button „Teilnahme bestätigen“",
+      "code": {
+        "part": "Button"
+      },
+      "data": "isFull ? t.attend.confirmWaitlist : t.attend.confirm"
+    }
+  ],
+  "codeOnly": [
+    "Dialog",
+    "DialogTrigger",
+    "DialogHeader",
+    "DialogFooter",
+    "ItemGroup",
+    "ItemMedia",
+    "ItemContent",
+    "ItemTitle",
+    "ItemDescription"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "ItemGroup-Abstand im Dialog: Figma 16px, Code 10px. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-036"
+    }
+  ]
+}

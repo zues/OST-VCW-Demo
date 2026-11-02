@@ -1,0 +1,262 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "input-group",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/input-group.tsx",
+    "registry": "@shadcn/input-group",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Input Group"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "InputGroup",
+        "type": "COMPONENT_SET",
+        "id": "18672:226415",
+        "key": "284af9ca0f4901e2376a4a5ca2ff1b11123a174a"
+      },
+      "code": {
+        "export": "InputGroup"
+      },
+      "props": [
+        {
+          "figma": "Type",
+          "type": "VARIANT",
+          "code": {
+            "composition": true
+          },
+          "values": {
+            "Input": "<InputGroupInput />",
+            "Textarea": "<InputGroupTextarea />"
+          }
+        },
+        {
+          "figma": "Placeholder Text",
+          "type": "TEXT",
+          "figmaKey": "Placeholder Text#65:12",
+          "code": {
+            "part": "InputGroupInput",
+            "prop": "placeholder"
+          }
+        },
+        {
+          "figma": "Addon 1 (inline-start)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 1 (inline-start)#18677:14",
+          "code": {
+            "part": "InputGroupAddon",
+            "prop": "align",
+            "value": "inline-start"
+          }
+        },
+        {
+          "figma": "Addon 2 (inline-start)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 2 (inline-start)#18677:21",
+          "code": {
+            "part": "InputGroupAddon",
+            "prop": "align",
+            "value": "inline-start"
+          }
+        },
+        {
+          "figma": "Addon 1 (inline-end)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 1 (inline-end)#18677:28",
+          "code": {
+            "part": "InputGroupAddon",
+            "prop": "align",
+            "value": "inline-end"
+          }
+        },
+        {
+          "figma": "Addon 2 (inline-end)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 2 (inline-end)#18677:35",
+          "code": {
+            "part": "InputGroupAddon",
+            "prop": "align",
+            "value": "inline-end"
+          }
+        },
+        {
+          "figma": "Addon (block-start)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon (block-start)#18677:50",
+          "code": {
+            "part": "InputGroupAddon",
+            "prop": "align",
+            "value": "block-start"
+          }
+        },
+        {
+          "figma": "Addon (block-end)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon (block-end)#18677:58",
+          "code": {
+            "part": "InputGroupAddon",
+            "prop": "align",
+            "value": "block-end"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Focus": ":focus-visible auf dem Control",
+            "Filled": "value gesetzt",
+            "Disabled": "disabled",
+            "Invalid": "aria-invalid"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "InputGroup / Addon Inline",
+        "type": "COMPONENT_SET",
+        "id": "18677:9902",
+        "key": "d9c35e54620ac77ea60c21c633b3dde69a3a9ef4"
+      },
+      "code": {
+        "export": "InputGroupAddon"
+      },
+      "props": [
+        {
+          "figma": "Text",
+          "type": "TEXT",
+          "figmaKey": "Text#18677:6",
+          "code": {
+            "part": "InputGroupText",
+            "children": true
+          }
+        },
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "composition": true
+          },
+          "values": {
+            "Icon": "<Icon />",
+            "Text": "<InputGroupText />",
+            "Kbd": "<Kbd />",
+            "Spinner": "<Spinner />",
+            "Check Circle": "<CheckCircleIcon />",
+            "Button": "<InputGroupButton />",
+            "Tooltip": "<Tooltip> um <InputGroupButton />",
+            "Dropdown": "<DropdownMenu> mit <InputGroupButton />"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "InputGroup / Addon Block",
+        "type": "COMPONENT_SET",
+        "id": "18677:10743",
+        "key": "25f85e994937d9b3bc5528483121be9ef6438ecc"
+      },
+      "code": {
+        "export": "InputGroupAddon"
+      },
+      "props": [
+        {
+          "figma": "Align",
+          "type": "VARIANT",
+          "code": {
+            "prop": "align"
+          },
+          "values": {
+            "Start": "block-start",
+            "End": "block-end"
+          }
+        },
+        {
+          "figma": "Separator",
+          "type": "BOOLEAN",
+          "figmaKey": "Separator#18725:0",
+          "code": {
+            "className": "border-t / border-b"
+          }
+        },
+        {
+          "figma": "Addon 1 (start)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 1 (start)#18677:46",
+          "code": {
+            "child": "Element am Anfang"
+          }
+        },
+        {
+          "figma": "Addon 2 (start)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 2 (start)#18677:47",
+          "code": {
+            "child": "Element am Anfang"
+          }
+        },
+        {
+          "figma": "Addon 1 (end)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 1 (end)#18677:48",
+          "code": {
+            "child": "Element am Ende"
+          }
+        },
+        {
+          "figma": "Addon 2 (end)",
+          "type": "BOOLEAN",
+          "figmaKey": "Addon 2 (end)#18677:49",
+          "code": {
+            "child": "Element am Ende"
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "InputGroupTextarea"
+  ],
+  "codeOnlyValues": [
+    {
+      "export": "InputGroupButton",
+      "prop": "size",
+      "values": [
+        "xs",
+        "sm",
+        "icon-xs",
+        "icon-sm"
+      ]
+    },
+    {
+      "export": "InputGroupButton",
+      "prop": "variant",
+      "values": [
+        "ghost",
+        "default",
+        "outline",
+        "secondary"
+      ],
+      "valuesFrom": {
+        "component": "button"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "InputGroupButton (inkl. Grössen) ist in Figma keine eigene Komponente, nur Addon-Variante 'Button'. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-016"
+    }
+  ]
+}

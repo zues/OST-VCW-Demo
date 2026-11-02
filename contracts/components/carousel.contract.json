@@ -1,0 +1,142 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "carousel",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/carousel.tsx",
+    "registry": "@shadcn/carousel",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Carousel"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Carousel",
+        "type": "COMPONENT_SET",
+        "id": "241:1368",
+        "key": "be55288592fd97810491a2705326faedf526509a"
+      },
+      "code": {
+        "export": "Carousel"
+      },
+      "props": [
+        {
+          "figma": "CarouselItems Wrapper",
+          "type": "SLOT",
+          "figmaKey": "CarouselItems Wrapper#21389:0",
+          "code": {
+            "part": "CarouselContent"
+          }
+        },
+        {
+          "figma": "Orientation",
+          "type": "VARIANT",
+          "code": {
+            "prop": "orientation"
+          },
+          "values": {
+            "Horizontal": "horizontal",
+            "Vertical": "vertical"
+          }
+        },
+        {
+          "figma": "Breakpoint",
+          "type": "VARIANT",
+          "code": null,
+          "values": {
+            "lg": null,
+            "md": null,
+            "sm": null
+          },
+          "note": "Keine Prop – im Code responsive basis-Klassen auf CarouselItem (z. B. md:basis-1/2)."
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Carousel / CarouselItem",
+        "type": "COMPONENT",
+        "id": "239:1214",
+        "key": "77e48c249bc6dac403a7715102669416f693223a"
+      },
+      "code": {
+        "export": "CarouselItem"
+      },
+      "props": []
+    },
+    {
+      "figma": {
+        "name": "Carousel / Arrow Button",
+        "type": "COMPONENT_SET",
+        "id": "239:851",
+        "key": "0bfb9e991cdfb2c8850e6ba8a0ea5b863735d9c7"
+      },
+      "code": {
+        "export": "CarouselNext | CarouselPrevious"
+      },
+      "props": [
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "composition": true
+          },
+          "values": {
+            "Next": "<CarouselNext />",
+            "Previous": "<CarouselPrevious />"
+          }
+        },
+        {
+          "figma": "Orientation",
+          "type": "VARIANT",
+          "code": {
+            "inherited": "Carousel.orientation"
+          },
+          "values": {
+            "Horizontal": "horizontal",
+            "Vertical": "vertical"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":hover",
+            "Focus": ":focus-visible",
+            "Pressed": ":active",
+            "Disabled": "disabled (Ende erreicht)"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Carousel / Basic",
+        "type": "COMPONENT",
+        "id": "239:1300",
+        "key": "d77fb3d33772bc4e77cb4b599995ca89b65f53ae"
+      },
+      "code": null,
+      "props": [],
+      "note": "Beispiel-Komposition aus der shadcn-Doku, keine eigene Code-Komponente."
+    }
+  ],
+  "codeOnly": [
+    "CarouselContent"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Breakpoint ist im Code keine Prop (responsive basis-Klassen). – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-012"
+    }
+  ]
+}

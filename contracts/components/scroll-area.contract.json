@@ -1,0 +1,46 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "scroll-area",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/scroll-area.tsx",
+    "registry": "@shadcn/scroll-area",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Scroll Area"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Scroll Area / Vertical",
+        "type": "COMPONENT",
+        "id": "18597:81811",
+        "key": "38f16b93e4a69594862a596bfdb119d715821914"
+      },
+      "code": {
+        "export": "ScrollArea"
+      },
+      "props": []
+    },
+    {
+      "figma": {
+        "name": "Scroll Area / Horizontal",
+        "type": "COMPONENT",
+        "id": "18597:81812",
+        "key": "744cd767405e1397d6ead694adfd35c56295f096"
+      },
+      "code": {
+        "export": "ScrollArea",
+        "with": "<ScrollBar orientation=\"horizontal\" />"
+      },
+      "props": []
+    }
+  ],
+  "codeOnly": [
+    "ScrollBar"
+  ],
+  "issues": []
+}

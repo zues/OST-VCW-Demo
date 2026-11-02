@@ -1,0 +1,101 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "meetup-chat-teaser",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/meetup-chat-teaser.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "item",
+    "button"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "MeetupChatTeaser",
+        "type": "COMPONENT_SET",
+        "id": "27477:607362",
+        "key": "6cfc36d3b386ebf1095518f36c24d24c66d2e558"
+      },
+      "code": {
+        "export": "MeetupChatTeaser"
+      },
+      "note": "Komponente um eine Kit-`Item`-Instanz. Text und Aktion hängen vom Teilnahme-Status ab.",
+      "props": [
+        {
+          "figma": "Teilnahme",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Nein": null,
+            "Ja": "isAttending"
+          },
+          "note": "Kein Prop: `useAttendance(meetup.id)`. Ja → Beschreibung `t.chat.opensSoon`, keine `ItemActions`. Variante Ja per Claude Code ergänzt am 01.11.2026 (D-051)."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Item",
+      "code": {
+        "part": "Item",
+        "props": {
+          "variant": "outline"
+        }
+      },
+      "figmaId": "27462:600766"
+    },
+    {
+      "figma": "Item › Media",
+      "code": {
+        "part": "ItemMedia",
+        "props": {
+          "variant": "icon"
+        }
+      },
+      "note": "Lucide MessagesSquareIcon."
+    },
+    {
+      "figma": "Item › Title",
+      "code": {
+        "part": "ItemTitle"
+      },
+      "figmaProp": "Title Text#18672:30",
+      "data": "t.chat.title"
+    },
+    {
+      "figma": "Item › Description",
+      "code": {
+        "part": "ItemDescription"
+      },
+      "figmaProp": "Description Text#18672:31",
+      "data": "isAttending ? t.chat.opensSoon : t.chat.joinHint"
+    },
+    {
+      "figma": "Item › Actions › Button „Teilnehmen“",
+      "code": {
+        "part": "Button",
+        "props": {
+          "variant": "outline",
+          "size": "sm"
+        }
+      },
+      "when": "!isAttending",
+      "note": "Öffnet `AttendDialog`."
+    }
+  ],
+  "codeOnly": [
+    "ItemActions",
+    "ItemContent"
+  ],
+  "issues": []
+}

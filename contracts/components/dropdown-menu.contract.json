@@ -1,0 +1,259 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "dropdown-menu",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/dropdown-menu.tsx",
+    "registry": "@shadcn/dropdown-menu",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Dropdown Menu"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "DropdownMenu",
+        "type": "COMPONENT",
+        "id": "336:5077",
+        "key": "359365db47f9ac3088cf2da3e4f6fc41909b9b6e"
+      },
+      "code": {
+        "export": "DropdownMenu"
+      },
+      "props": [
+        {
+          "figma": "Open",
+          "type": "BOOLEAN",
+          "figmaKey": "Open#336:7",
+          "code": {
+            "prop": "open"
+          }
+        },
+        {
+          "figma": "Instance",
+          "type": "INSTANCE_SWAP",
+          "figmaKey": "Instance#17402:1",
+          "code": {
+            "part": "DropdownMenuTrigger",
+            "children": true
+          },
+          "note": "Auslöser, im Prototyp ein Button (render={<Button />})."
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "DropdownMenu / Menu",
+        "type": "COMPONENT_SET",
+        "id": "21469:1621",
+        "key": "4ce4935d5a96763d8f27612fa8059828917ffc36"
+      },
+      "code": {
+        "export": "DropdownMenuContent"
+      },
+      "props": [
+        {
+          "figma": "Items",
+          "type": "SLOT",
+          "figmaKey": "Items#21469:0",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Color",
+          "type": "VARIANT",
+          "code": null,
+          "values": {
+            "Default": null,
+            "Inverted": null
+          }
+        },
+        {
+          "figma": "Appearance",
+          "type": "VARIANT",
+          "code": null,
+          "values": {
+            "Solid": null,
+            "Translucent": null
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "DropdownMenu / Item",
+        "type": "COMPONENT_SET",
+        "id": "330:8549",
+        "key": "9437403421247d3cd65fa238ad35b65a8fce7c3f"
+      },
+      "code": {
+        "export": "DropdownMenuItem | DropdownMenuRadioItem | DropdownMenuCheckboxItem"
+      },
+      "props": [
+        {
+          "figma": "Dropdown Menu Item Text",
+          "type": "TEXT",
+          "figmaKey": "Dropdown Menu Item Text#330:0",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Icon#330:20",
+          "code": {
+            "child": "<Icon />"
+          }
+        },
+        {
+          "figma": "Shortcut Text",
+          "type": "TEXT",
+          "figmaKey": "Shortcut Text#330:30",
+          "code": {
+            "part": "DropdownMenuShortcut",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Shortcut",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Shortcut#330:40",
+          "code": {
+            "part": "DropdownMenuShortcut"
+          }
+        },
+        {
+          "figma": "Show Check Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Check Icon#21215:3",
+          "code": {
+            "composition": true
+          },
+          "note": "Ausgewählter Zustand von DropdownMenuRadioItem / DropdownMenuCheckboxItem."
+        },
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "prop": "variant"
+          },
+          "values": {
+            "Default": "default",
+            "Shortcut": "default",
+            "Destructive": "destructive"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":focus (data-highlighted)",
+            "Hover (Translucent)": null,
+            "Disabled": "disabled"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "DropdownMenu / Label",
+        "type": "COMPONENT",
+        "id": "330:24589",
+        "key": "696fe3eb5df26e69dbe2c5db28b9ea3f08257bbf"
+      },
+      "code": {
+        "export": "DropdownMenuLabel"
+      },
+      "props": [
+        {
+          "figma": "Label Text",
+          "type": "TEXT",
+          "figmaKey": "Label Text#473:3",
+          "code": {
+            "children": true
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "DropdownMenu / Separator",
+        "type": "COMPONENT",
+        "id": "91:272",
+        "key": "373fbc17c927b0a9c617acaace783d97f1e64c75"
+      },
+      "code": {
+        "export": "DropdownMenuSeparator"
+      },
+      "props": []
+    },
+    {
+      "figma": {
+        "name": "DropdownMenu / SubTrigger",
+        "type": "COMPONENT_SET",
+        "id": "330:24002",
+        "key": "6049c1f7c5bcffb2be4777a9c163deda090c23a4"
+      },
+      "code": {
+        "export": "DropdownMenuSubTrigger"
+      },
+      "props": [
+        {
+          "figma": "SubTrigger Text",
+          "type": "TEXT",
+          "figmaKey": "SubTrigger Text#330:56",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Icon#21215:0",
+          "code": {
+            "child": "<Icon />"
+          }
+        },
+        {
+          "figma": "Active",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "No": null,
+            "Yes": "data-popup-open"
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "DropdownMenuGroup",
+    "DropdownMenuRadioGroup",
+    "DropdownMenuSub",
+    "DropdownMenuSubContent",
+    "DropdownMenuPortal"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "'Shortcut' ist in Figma eine Variante, im Code ein Kind-Element (DropdownMenuShortcut). Akzeptiert.",
+      "drift": "D-005"
+    },
+    {
+      "severity": "info",
+      "message": "Color (Inverted) und Appearance (Translucent) gibt es nur in Figma. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-006"
+    }
+  ]
+}

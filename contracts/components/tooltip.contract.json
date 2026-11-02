@@ -1,0 +1,67 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "tooltip",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/tooltip.tsx",
+    "registry": "@shadcn/tooltip",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Tooltip"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Tooltip",
+        "type": "COMPONENT_SET",
+        "id": "17103:809",
+        "key": "e86d8729007a193aed4e7474bcfbe55f4cea9180"
+      },
+      "code": {
+        "export": "TooltipContent"
+      },
+      "props": [
+        {
+          "figma": "Tooltip Text",
+          "type": "TEXT",
+          "figmaKey": "Tooltip Text#17103:0",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show KbdGroup",
+          "type": "BOOLEAN",
+          "figmaKey": "Show KbdGroup#18665:17",
+          "code": null,
+          "note": "Kbd ist im Prototyp nicht installiert."
+        },
+        {
+          "figma": "Side",
+          "type": "VARIANT",
+          "code": {
+            "prop": "side",
+            "valuesFrom": {
+              "package": "@base-ui/react"
+            }
+          },
+          "values": {
+            "Top": "top",
+            "Bottom": "bottom",
+            "Left": "left",
+            "Right": "right"
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "Tooltip",
+    "TooltipTrigger",
+    "TooltipProvider"
+  ],
+  "issues": []
+}

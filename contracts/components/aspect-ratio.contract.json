@@ -1,0 +1,60 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "aspect-ratio",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/aspect-ratio.tsx",
+    "registry": "@shadcn/aspect-ratio",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Aspect Ratio"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Aspect Ratio",
+        "type": "COMPONENT_SET",
+        "id": "28:1540",
+        "key": "a2d09cb00c9e8c43a5f3c2df99c6cf964a49f501"
+      },
+      "code": {
+        "export": "AspectRatio"
+      },
+      "props": [
+        {
+          "figma": "Ratio",
+          "type": "VARIANT",
+          "code": {
+            "prop": "ratio",
+            "expression": true
+          },
+          "values": {
+            "1 / 1": "{1/1}",
+            "4 / 3": "{4/3}",
+            "3 / 4": "{3/4}",
+            "5 / 4": "{5/4}",
+            "4 / 5": "{4/5}",
+            "3 / 2": "{3/2}",
+            "2 / 3": "{2/3}",
+            "16 / 10": "{16/10}",
+            "10 / 16": "{10/16}",
+            "16 / 9": "{16/9}",
+            "9 / 16": "{9/16}",
+            "2 / 1": "{2/1}",
+            "1 / 2": "{1/2}",
+            "1.618 / 1": "{1.618/1}",
+            "1 / 1.618": "{1/1.618}",
+            "21 / 9": "{21/9}",
+            "9 / 21": "{9/21}"
+          },
+          "note": "Im Code eine Zahl, z. B. ratio={16 / 9}."
+        }
+      ]
+    }
+  ],
+  "codeOnly": [],
+  "issues": []
+}

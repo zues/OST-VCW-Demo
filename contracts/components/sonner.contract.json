@@ -1,0 +1,153 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "sonner",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/sonner.tsx",
+    "registry": "@shadcn/sonner",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Sonner"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Sonner",
+        "type": "COMPONENT_SET",
+        "id": "18482:48401",
+        "key": "0fdf67dd4af7a5998ced0481a5caf51093baa0db"
+      },
+      "code": {
+        "call": "toast()",
+        "export": "Toaster"
+      },
+      "props": [
+        {
+          "figma": "Title Text",
+          "type": "TEXT",
+          "figmaKey": "Title Text#18482:1",
+          "code": {
+            "argument": "toast(title)"
+          }
+        },
+        {
+          "figma": "Description",
+          "type": "BOOLEAN",
+          "figmaKey": "Description#18482:0",
+          "code": {
+            "option": "description"
+          }
+        },
+        {
+          "figma": "Description Text",
+          "type": "TEXT",
+          "figmaKey": "Description Text#18482:2",
+          "code": {
+            "option": "description"
+          }
+        },
+        {
+          "figma": "Action",
+          "type": "BOOLEAN",
+          "figmaKey": "Action#18482:3",
+          "code": {
+            "option": "action"
+          }
+        },
+        {
+          "figma": "Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Icon#18482:4",
+          "code": {
+            "call": "toast.success | toast.info | …"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Focus": ":focus-visible"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Sonner / Icon",
+        "type": "COMPONENT_SET",
+        "id": "17375:198096",
+        "key": "9a16b22aae4e8511c2a70b56e209694d345e6c99"
+      },
+      "code": {
+        "call": "toast.<type>()"
+      },
+      "props": [
+        {
+          "figma": "Type",
+          "type": "VARIANT",
+          "code": {
+            "call": true
+          },
+          "values": {
+            "Success": "toast.success",
+            "Info": "toast.info",
+            "Warning": "toast.warning",
+            "Error": "toast.error",
+            "Loading": "toast.loading"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Sonner / Action",
+        "type": "COMPONENT_SET",
+        "id": "17375:198044",
+        "key": "8935327fdee01ee0cd2d5ce179588266f92ad6c1"
+      },
+      "code": {
+        "call": "toast()"
+      },
+      "props": [
+        {
+          "figma": "Type",
+          "type": "VARIANT",
+          "code": {
+            "option": true
+          },
+          "values": {
+            "Default": "action",
+            "Secondary": "cancel"
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Sonner ist im Code keine Komponente, sondern der Funktionsaufruf toast() plus <Toaster /> im Layout. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-018"
+    }
+  ],
+  "codeOnlyValues": [
+    {
+      "export": "Toaster",
+      "prop": "position",
+      "values": [
+        "top-center"
+      ],
+      "valuesFrom": {
+        "package": "sonner"
+      }
+    }
+  ]
+}

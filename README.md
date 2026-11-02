@@ -4,6 +4,10 @@ Referenz-App für das Seminar: Meetups für Katzen und ihre Menschen. Next.js 16
 (`base-nova`). Das leere Grundgerüst für eigene Projekte liegt in
 [OST-VC-Base](https://github.com/zues/OST-VC-Base).
 
+- [KONZEPT.md](KONZEPT.md) – Aufbau, Regeln, Figma-Datei, Entscheidungen
+- [TODO.md](TODO.md) – offene Aufgaben (hier weitermachen)
+- [contracts/](contracts/README.md) – Figma ↔ Code: Contracts, Drift-Liste, Prüfscripts
+
 ## Starten
 
 ```bash

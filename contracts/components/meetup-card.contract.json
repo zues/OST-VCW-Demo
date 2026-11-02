@@ -1,0 +1,183 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "meetup-card",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/meetup-card.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "card",
+    "aspect-ratio",
+    "badge",
+    "avatar"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "MeetupCard",
+        "type": "COMPONENT_SET",
+        "id": "27477:608133",
+        "key": "bffef78a2e087d769f4d254dc2bd7817da5db657"
+      },
+      "code": {
+        "export": "MeetupCard"
+      },
+      "note": "Die Figma-Komponente hat keine eigenen Properties. Inhalte werden über Overrides der Kit-Instanzen gesetzt (siehe layers). Im Code kommt alles aus der einen Prop `meetup: Meetup`. Client Component (\"use client\"), Texte aus `usePreferences().t.meetup` (DE/EN/FR).",
+      "props": [
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":hover"
+          },
+          "note": "Ganze Karte ist ein `<Link>`; Hover ≙ `group-hover/meetup-card:shadow-md` (Figma Effect Style shadow/md). Variante Hover per Claude Code ergänzt am 01.11.2026 (D-032)."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Card",
+      "figmaId": "27459:596896",
+      "code": {
+        "part": "Card"
+      },
+      "note": "Figma Size=default = Code-Default (keine Prop). Im Code mit `pt-0` (Bild bündig oben) und `h-full`, umschlossen von einem `<Link>` auf `/meetups/[slug]`."
+    },
+    {
+      "figma": "Card › Aspect Ratio",
+      "figmaProp": "Show Image#21123:39",
+      "code": {
+        "part": "AspectRatio",
+        "props": {
+          "ratio": "16 / 9"
+        }
+      },
+      "note": "Figma: Ratio=16 / 9, Bild als Fill der Aspect-Ratio-Instanz."
+    },
+    {
+      "figma": "Card › Aspect Ratio (Fill)",
+      "code": {
+        "element": "next/image (fill, object-cover)"
+      },
+      "data": "meetup.imageUrl"
+    },
+    {
+      "figma": "Badges › Badge (1)",
+      "figmaId": "27459:596970",
+      "figmaProp": "Badge Text#26:6",
+      "code": {
+        "part": "Badge",
+        "props": {
+          "variant": "secondary"
+        }
+      },
+      "data": "formatPrice(meetup.price)",
+      "when": "meetup.price !== null",
+      "note": "Figma-Beispiel: „CHF 35.00“."
+    },
+    {
+      "figma": "Badges › Badge (2)",
+      "figmaId": "27459:596994",
+      "figmaProp": "Badge Text#26:6",
+      "code": {
+        "part": "Badge",
+        "props": {
+          "variant": "secondary"
+        }
+      },
+      "data": "t.meetup.waitlist | t.meetup.seatsLeft(N) (N = capacity − attendees.length)",
+      "when": "freie Plätze ≤ 3",
+      "note": "Figma-Beispiel: „Noch 3 Plätze“."
+    },
+    {
+      "figma": "Card › Card Title",
+      "figmaProp": "Card Title#21123:18",
+      "code": {
+        "part": "CardTitle"
+      },
+      "data": "meetup.title",
+      "note": "Im Code `line-clamp-2`."
+    },
+    {
+      "figma": "Card › Card Description",
+      "figmaProp": "Card Description#21123:19",
+      "code": {
+        "part": "CardDescription"
+      },
+      "data": "(meetup.recurring ? `${t.meetup.weekly} · ` : \"\") + formatMeetupDate(meetup.startsAt, lang)",
+      "note": "Figma-Beispiel: „Fr., 6. Nov. · 18:30“."
+    },
+    {
+      "figma": "Card › Card Content › Group (Text + Lucide Star)",
+      "figmaId": "27477:608201",
+      "figmaProp": "Card Content#21349:46",
+      "code": {
+        "part": "CardDescription"
+      },
+      "data": "t.meetup.by(meetup.group.name) + \" · \" + meetup.group.rating.toFixed(1) + StarIcon",
+      "note": "Figma: Textebene im Slot `Card Content` mit „★“-Zeichen; Code: zweite `CardDescription` im `CardHeader` mit Lucide `StarIcon` (D-021). Stern seit 01.11.2026 als Lucide-Icon `Star` 12px gefüllt (≙ `StarIcon size-3 fill-current`), vorher Textzeichen."
+    },
+    {
+      "figma": "Card › Card Footer Content › Attendees › Avatar Group",
+      "figmaId": "I27459:596896;17374:183174;27459:596952",
+      "figmaProp": "Card Footer Content#21349:49",
+      "code": {
+        "part": "AvatarGroup"
+      },
+      "data": "meetup.attendees.slice(0, 3)",
+      "note": "Figma: 3 × Avatar (Type=Image, Size=sm)."
+    },
+    {
+      "figma": "… › Avatar Group › Avatar",
+      "code": {
+        "part": "Avatar",
+        "props": {
+          "size": "sm"
+        }
+      },
+      "data": "member.avatarUrl → AvatarImage, member.name.charAt(0) → AvatarFallback"
+    },
+    {
+      "figma": "Card › Card Footer Content › Attendees › Count",
+      "figmaId": "I27459:596896;17374:183174;27459:596968",
+      "code": {
+        "element": "<span className=\"font-medium\">"
+      },
+      "data": "t.meetup.attendees(meetup.attendees.length)"
+    }
+  ],
+  "codeOnly": [
+    "CardHeader",
+    "CardFooter",
+    "AvatarImage",
+    "AvatarFallback"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Gruppenzeile: Figma im Slot Card Content, Code als zweite CardDescription. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-021"
+    },
+    {
+      "severity": "info",
+      "message": "Badges liegen in Figma neben, im Code innerhalb der AspectRatio. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-022"
+    },
+    {
+      "severity": "info",
+      "message": "Keine Component Properties – Badge-Sichtbarkeit und Texte nur per Override. – Akzeptiert: nur Zustände als Varianten, keine Component Properties (Entscheidung Alex, 01.11.2026).",
+      "drift": "D-031"
+    }
+  ]
+}

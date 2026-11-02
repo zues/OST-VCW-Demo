@@ -1,0 +1,127 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "meetup-filter-bar",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/meetup-filter-bar.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "select",
+    "button"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "MeetupFilterBar",
+        "type": "COMPONENT_SET",
+        "id": "27477:608075",
+        "key": "d909ffa35731bd386065f9694556007b34817b2b"
+      },
+      "code": {
+        "export": "MeetupFilterBar"
+      },
+      "note": "Vier Filter als `Select`. Im Code generische Hilfskomponente `FilterSelect` (Icon + `SelectValue`), Optionen aus `t.filters`. „Zurücksetzen“ erscheint nur bei geänderten Filtern.",
+      "props": [
+        {
+          "figma": "Filter",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Standard": null,
+            "Geändert": "isDirty"
+          },
+          "note": "Abgeleitet: ein Filter (inkl. Kategorie) weicht von `defaultFilters` ab. Variante Geändert per Claude Code ergänzt am 01.11.2026 (D-053)."
+        },
+        {
+          "figma": "Breakpoint",
+          "type": "VARIANT",
+          "code": {
+            "className": "`flex flex-wrap` (Figma: eine Zeile, scrollbar – D-057)"
+          },
+          "values": {
+            "Desktop": "≥ sm",
+            "Mobile": "< sm"
+          },
+          "note": "Variante Mobile (342 px, abgeschnitten = horizontal scrollbar) per Claude Code ergänzt am 01.11.2026 (D-057)."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Select (Datum)",
+      "code": {
+        "part": "SelectTrigger"
+      },
+      "figmaId": "27459:596600",
+      "figmaProp": "Placeholder#3001:0",
+      "data": "t.filters.days[filters.day]"
+    },
+    {
+      "figma": "Select (Grösse)",
+      "code": {
+        "part": "SelectTrigger"
+      },
+      "figmaId": "27459:596625",
+      "figmaProp": "Placeholder#3001:0",
+      "data": "t.filters.sizes[filters.size]"
+    },
+    {
+      "figma": "Select (Format)",
+      "code": {
+        "part": "SelectTrigger"
+      },
+      "figmaId": "27459:596650",
+      "figmaProp": "Placeholder#3001:0",
+      "data": "t.filters.formats[filters.format]"
+    },
+    {
+      "figma": "Select (Entfernung)",
+      "code": {
+        "part": "SelectTrigger"
+      },
+      "figmaId": "27459:596675",
+      "figmaProp": "Placeholder#3001:0",
+      "data": "t.filters.within(km) | t.filters.anyDistance"
+    },
+    {
+      "figma": "Button „Zurücksetzen“ (nur Filter=Geändert)",
+      "code": {
+        "part": "Button",
+        "props": {
+          "variant": "link"
+        }
+      },
+      "data": "t.filters.reset",
+      "when": "isDirty",
+      "note": "Nur im Code.",
+      "figmaId": "27477:608051"
+    }
+  ],
+  "codeOnly": [
+    "Select",
+    "SelectContent",
+    "SelectItem",
+    "SelectValue"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Keine Component Properties. – Akzeptiert: nur Zustände als Varianten, keine Component Properties (Entscheidung Alex, 01.11.2026).",
+      "drift": "D-051"
+    },
+    {
+      "severity": "warn",
+      "message": "Mobile: Figma eine scrollbare Zeile, Code bricht auf drei Zeilen um.",
+      "drift": "D-057"
+    }
+  ]
+}

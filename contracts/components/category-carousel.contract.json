@@ -1,0 +1,99 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "category-carousel",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/category-carousel.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "carousel",
+    "toggle"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "CategoryCarousel",
+        "type": "COMPONENT_SET",
+        "id": "27477:613339",
+        "key": "d79dfc707c8f38ac7a8592050a97cec6ecb0c6c4"
+      },
+      "code": {
+        "export": "CategoryCarousel"
+      },
+      "note": "11 Kategorien als `Toggle` (Size lg). Labels aus `t.categories`, Icons fest pro Kategorie.",
+      "props": [
+        {
+          "figma": "Breakpoint",
+          "type": "VARIANT",
+          "code": {
+            "className": "keine Breakpoint-Klassen: Carousel wird schmaler, Pfeile bleiben"
+          },
+          "values": {
+            "Desktop": "≥ sm",
+            "Mobile": "< sm"
+          },
+          "note": "Variante Mobile (342 px) per Claude Code ergänzt am 01.11.2026. Ebenen-IDs unten beziehen sich auf die Desktop-Variante 27473:9833."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Carousel / Arrow Button (Previous)",
+      "code": {
+        "part": "CarouselPrevious"
+      },
+      "figmaId": "27459:596701"
+    },
+    {
+      "figma": "Items",
+      "code": {
+        "part": "CarouselContent"
+      },
+      "figmaId": "27459:596713",
+      "note": "Figma: Auto-Layout-Frame; Code: Embla-Carousel (`dragFree`) mit `CarouselItem` je Toggle (D-049)."
+    },
+    {
+      "figma": "Items › Toggle",
+      "code": {
+        "part": "Toggle",
+        "props": {
+          "size": "lg"
+        }
+      },
+      "figmaId": "27459:596714",
+      "figmaProp": "Toggle Text#132:4",
+      "data": "t.categories[item.id]",
+      "note": "Figma State=Pressed ↔ Code `pressed={value === item.id}`; Figma `Layout=Vertical` ↔ Code `className=\"h-auto flex-col gap-1.5 px-3 py-2\"` (D-019)."
+    },
+    {
+      "figma": "Carousel / Arrow Button (Next)",
+      "code": {
+        "part": "CarouselNext"
+      },
+      "figmaId": "27459:596868"
+    }
+  ],
+  "codeOnly": [
+    "Carousel",
+    "CarouselItem"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Figma ohne Kit-Carousel (Frame + Pfeile), Code mit Carousel/CarouselItem. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-049"
+    },
+    {
+      "severity": "info",
+      "message": "Keine Component Properties. – Akzeptiert: nur Zustände als Varianten, keine Component Properties (Entscheidung Alex, 01.11.2026).",
+      "drift": "D-051"
+    }
+  ]
+}

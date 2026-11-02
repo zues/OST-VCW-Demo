@@ -1,0 +1,201 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "meetup-action-bar",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/meetup-action-bar.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "card",
+    "badge",
+    "toggle",
+    "tooltip",
+    "button",
+    "alert-dialog"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "MeetupActionBar",
+        "type": "COMPONENT_SET",
+        "id": "27473:11846",
+        "key": "e88adf3945266dbaf7c543068e0a63a76367d440"
+      },
+      "code": {
+        "export": "MeetupActionBar"
+      },
+      "note": "Fixierte Leiste (`fixed bottom-4`) mit Datum/Titel, Preis, Plätzen, Merken, Teilen und Teilnehmen. „Du nimmst teil“ öffnet den AlertDialog „Teilnahme absagen?“ (Overlay `27462:603090`).",
+      "props": [
+        {
+          "figma": "Teilnahme",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Nein": null,
+            "Ja": "isAttending"
+          },
+          "note": "Kein Prop: Zustand aus `useAttendance(meetup.id)` (localStorage)."
+        },
+        {
+          "figma": "Gemerkt",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Nein": null,
+            "Ja": "isSaved"
+          },
+          "note": "Kein Prop: `useState` → `Toggle pressed={isSaved}`; Figma: Toggle State=Pressed. per Claude Code ergänzt am 01.11.2026 (D-051)."
+        },
+        {
+          "figma": "Plätze",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Frei": "seatsLeft > 0",
+            "Voll": "seatsLeft <= 0"
+          },
+          "note": "Abgeleitet: Frei → Badge „Noch n Plätze“ + Button „Teilnehmen“; Voll → Badge und Button „Warteliste“. per Claude Code ergänzt am 01.11.2026 (D-051)."
+        },
+        {
+          "figma": "Breakpoint",
+          "type": "VARIANT",
+          "code": {
+            "className": "eine Zeile, Badges `hidden sm:flex`, Titel `truncate` (Figma: drei Zeilen – D-056)"
+          },
+          "values": {
+            "Desktop": "≥ sm",
+            "Mobile": "< sm"
+          },
+          "note": "Variante Mobile (358 px) per Claude Code ergänzt am 01.11.2026 (D-056): Datum/Titel, Badges, Merken + Teilen + Button volle Breite."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Card",
+      "code": {
+        "part": "Card"
+      },
+      "note": "`className=\"flex-row\"` (D-035)."
+    },
+    {
+      "figma": "Card › Datum",
+      "code": {
+        "part": "CardDescription"
+      },
+      "data": "formatMeetupDate(meetup.startsAt, lang)",
+      "note": "D-044"
+    },
+    {
+      "figma": "Card › Titel",
+      "code": {
+        "part": "CardTitle"
+      },
+      "data": "meetup.title"
+    },
+    {
+      "figma": "Card › Badge Preis",
+      "code": {
+        "part": "Badge",
+        "props": {
+          "variant": "outline"
+        }
+      },
+      "data": "t.meetup.free | formatPrice(meetup.price)",
+      "note": "Erst ab `sm`."
+    },
+    {
+      "figma": "Card › Badge Plätze",
+      "code": {
+        "part": "Badge",
+        "props": {
+          "variant": "secondary"
+        }
+      },
+      "data": "t.meetup.seatsLeft(n) | t.meetup.waitlist"
+    },
+    {
+      "figma": "Card › Toggle Merken",
+      "code": {
+        "part": "Toggle",
+        "props": {
+          "variant": "outline",
+          "size": "lg"
+        }
+      },
+      "note": "Mit Tooltip „Merken“/„Gemerkt“; gefülltes Herz (D-038)."
+    },
+    {
+      "figma": "Card › Button Teilen",
+      "code": {
+        "part": "Button",
+        "props": {
+          "variant": "outline",
+          "size": "icon-lg"
+        }
+      },
+      "note": "Kopiert den Link, Toast „Link kopiert“."
+    },
+    {
+      "figma": "Card › Button „Teilnehmen“ (Teilnahme=Nein)",
+      "code": {
+        "part": "Button",
+        "props": {
+          "size": "lg"
+        }
+      },
+      "data": "seatsLeft > 0 ? t.actionBar.attend : t.meetup.waitlist"
+    },
+    {
+      "figma": "Card › Button „Du nimmst teil“ (Teilnahme=Ja)",
+      "code": {
+        "part": "AlertDialogTrigger"
+      },
+      "data": "t.actionBar.attending",
+      "note": "Rendert `Button variant=\"secondary\" size=\"lg\"`."
+    }
+  ],
+  "codeOnly": [
+    "Tooltip",
+    "TooltipTrigger",
+    "TooltipContent",
+    "AlertDialog",
+    "AlertDialogContent",
+    "AlertDialogHeader",
+    "AlertDialogTitle",
+    "AlertDialogDescription",
+    "AlertDialogFooter",
+    "AlertDialogCancel",
+    "AlertDialogAction"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Card-Slot horizontal per Frame. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-035"
+    },
+    {
+      "severity": "info",
+      "message": "Datum/Titel ohne CardHeader. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-044"
+    },
+    {
+      "severity": "warn",
+      "message": "Mobile: Figma dreizeilig mit Badges, Code einzeilig mit abgeschnittenem Titel und ohne Badges.",
+      "drift": "D-056"
+    }
+  ]
+}

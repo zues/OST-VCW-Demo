@@ -1,0 +1,273 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "item",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/item.tsx",
+    "registry": "@shadcn/item",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Item"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Item",
+        "type": "COMPONENT_SET",
+        "id": "18672:198607",
+        "key": "3fd5d6e1b0b147ae0939a2e125c7a72e82f6b9e6"
+      },
+      "code": {
+        "export": "Item"
+      },
+      "props": [
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "prop": "variant"
+          },
+          "values": {
+            "Default": "default",
+            "Outline": "outline",
+            "Muted": "muted"
+          }
+        },
+        {
+          "figma": "Size",
+          "type": "VARIANT",
+          "code": {
+            "prop": "size"
+          },
+          "values": {
+            "default": "default",
+            "sm": "sm",
+            "xs": "xs"
+          }
+        },
+        {
+          "figma": "Show Media",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Media#18672:34",
+          "code": {
+            "part": "ItemMedia"
+          }
+        },
+        {
+          "figma": "Flex",
+          "type": "SLOT",
+          "figmaKey": "Flex#21466:0",
+          "code": {
+            "part": "ItemContent"
+          }
+        },
+        {
+          "figma": "Title Text",
+          "type": "TEXT",
+          "figmaKey": "Title Text#18672:30",
+          "code": {
+            "part": "ItemTitle",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Title",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Title#18672:33",
+          "code": {
+            "part": "ItemTitle"
+          }
+        },
+        {
+          "figma": "Description Text",
+          "type": "TEXT",
+          "figmaKey": "Description Text#18672:31",
+          "code": {
+            "part": "ItemDescription",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Description",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Description#18672:32",
+          "code": {
+            "part": "ItemDescription"
+          }
+        },
+        {
+          "figma": "Show Actions",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Actions#18672:35",
+          "code": {
+            "part": "ItemActions"
+          }
+        },
+        {
+          "figma": "Show Header",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Header#21147:19",
+          "code": {
+            "part": "ItemHeader"
+          }
+        },
+        {
+          "figma": "Swap Header",
+          "type": "INSTANCE_SWAP",
+          "figmaKey": "Swap Header#21147:29",
+          "code": {
+            "part": "ItemHeader",
+            "children": true
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Item / Media",
+        "type": "COMPONENT_SET",
+        "id": "18672:6043",
+        "key": "9910bc9d028ae5c0305bd5557b432e445aa5b365"
+      },
+      "code": {
+        "export": "ItemMedia"
+      },
+      "props": [
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "prop": "variant"
+          },
+          "values": {
+            "Icon (Simple)": "icon",
+            "Icon": null,
+            "Image": "image",
+            "Avatar": "default",
+            "AvatarGroup": "default"
+          },
+          "note": "'Icon' (Kasten mit Hintergrund) gehört zum Style new-york-v4 – nicht verwenden; 'Icon (Simple)' ≙ variant=\"icon\" (base-nova). In Figma per Beschreibung gekennzeichnet (D-007)."
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Item / Actions",
+        "type": "COMPONENT_SET",
+        "id": "18672:218310",
+        "key": "dad680f909572a67a63f4714a972753cf223089d"
+      },
+      "code": {
+        "export": "ItemActions"
+      },
+      "props": [
+        {
+          "figma": "Type",
+          "type": "VARIANT",
+          "code": {
+            "composition": true
+          },
+          "values": {
+            "Buttons": "<Button />…",
+            "Text + Button": "Text + <Button />",
+            "Icon": "<Icon />"
+          }
+        },
+        {
+          "figma": "Instance 1",
+          "type": "INSTANCE_SWAP",
+          "figmaKey": "Instance 1#18672:48",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Instance 2",
+          "type": "INSTANCE_SWAP",
+          "figmaKey": "Instance 2#18672:49",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Instance 2",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Instance 2#18672:50",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Text",
+          "type": "TEXT",
+          "figmaKey": "Text#18672:51",
+          "code": {
+            "children": true
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "ItemGroup",
+        "type": "COMPONENT",
+        "id": "18672:218902",
+        "key": "40ae525c169372f0d6f76d97caf955a2bab7c92b"
+      },
+      "code": {
+        "export": "ItemGroup"
+      },
+      "props": [
+        {
+          "figma": "Items",
+          "type": "SLOT",
+          "figmaKey": "Items#21410:40",
+          "code": {
+            "children": true
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Item / Separator",
+        "type": "COMPONENT",
+        "id": "27477:605109",
+        "key": "5e0a4041eee63e344d94d823308caa26201e4f41"
+      },
+      "code": {
+        "export": "ItemSeparator"
+      },
+      "props": [],
+      "note": "Am 01.11.2026 per Claude Code ergänzt (D-008), nicht Teil des originalen Kits. Separator horizontal + 8px oben/unten (my-2)."
+    }
+  ],
+  "codeOnly": [
+    "ItemFooter"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "ItemFooter hat keine Figma-Komponente (im Prototyp nicht genutzt). ItemSeparator seit 01.11.2026 als 'Item / Separator' in Figma. – ItemFooter akzeptiert.",
+      "drift": "D-008"
+    },
+    {
+      "severity": "info",
+      "message": "Show Actions=false blendet Item / Actions im Slot Flex nicht aus (Kit-Fehler). – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-033"
+    },
+    {
+      "severity": "info",
+      "message": "ItemGroup: Abstand im Slot fest 16px, im Code gap-4 bzw. gap-2.5 bei size=sm. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-036"
+    },
+    {
+      "severity": "info",
+      "message": "Item Media in Figma immer oben, im Code ohne Description vertikal zentriert. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-037"
+    }
+  ]
+}

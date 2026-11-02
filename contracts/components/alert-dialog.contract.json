@@ -1,0 +1,109 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "alert-dialog",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/alert-dialog.tsx",
+    "registry": "@shadcn/alert-dialog",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Alert Dialog"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Alert Dialog",
+        "type": "COMPONENT_SET",
+        "id": "83:122",
+        "key": "a8c61a3340a86418d08f1a8fa9dbb1aa2c239eb4"
+      },
+      "code": {
+        "export": "AlertDialogContent"
+      },
+      "props": [
+        {
+          "figma": "Title Text",
+          "type": "TEXT",
+          "figmaKey": "Title Text#83:0",
+          "code": {
+            "part": "AlertDialogTitle",
+            "children": true
+          }
+        },
+        {
+          "figma": "Description Text",
+          "type": "TEXT",
+          "figmaKey": "Description Text#83:3",
+          "code": {
+            "part": "AlertDialogDescription",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Media",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Media#21119:6",
+          "code": {
+            "part": "AlertDialogMedia"
+          }
+        },
+        {
+          "figma": "_AlertDialogHeader",
+          "type": "SLOT",
+          "figmaKey": "_AlertDialogHeader#21349:6",
+          "code": {
+            "part": "AlertDialogHeader"
+          }
+        },
+        {
+          "figma": "_AlertDialogFooter",
+          "type": "SLOT",
+          "figmaKey": "_AlertDialogFooter#21349:11",
+          "code": {
+            "part": "AlertDialogFooter"
+          },
+          "note": "Enthält AlertDialogCancel + AlertDialogAction."
+        },
+        {
+          "figma": "Size",
+          "type": "VARIANT",
+          "code": {
+            "prop": "size"
+          },
+          "values": {
+            "default": "default",
+            "sm": "sm"
+          }
+        },
+        {
+          "figma": "Destructive",
+          "type": "VARIANT",
+          "code": {
+            "part": "AlertDialogAction",
+            "prop": "variant",
+            "valuesFrom": {
+              "component": "button"
+            }
+          },
+          "values": {
+            "No": "default",
+            "Yes": "destructive"
+          },
+          "note": "Steuert die Variante des Bestätigen-Buttons."
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "AlertDialog",
+    "AlertDialogTrigger",
+    "AlertDialogPortal",
+    "AlertDialogOverlay",
+    "AlertDialogCancel",
+    "AlertDialogAction"
+  ],
+  "issues": []
+}

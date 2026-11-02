@@ -1,0 +1,123 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "dialog",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/dialog.tsx",
+    "registry": "@shadcn/dialog",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Dialog"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Dialog",
+        "type": "COMPONENT",
+        "id": "112:601",
+        "key": "ef9092a1ada047242d113de7fd73839d20bbb402"
+      },
+      "code": {
+        "export": "DialogContent"
+      },
+      "props": [
+        {
+          "figma": "Title Text",
+          "type": "TEXT",
+          "figmaKey": "Title Text#118:5",
+          "code": {
+            "part": "DialogTitle",
+            "children": true
+          }
+        },
+        {
+          "figma": "Description Text",
+          "type": "TEXT",
+          "figmaKey": "Description Text#118:15",
+          "code": {
+            "part": "DialogDescription",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Close Button",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Close Button#21141:11",
+          "code": {
+            "prop": "showCloseButton"
+          }
+        },
+        {
+          "figma": "Dialog Content",
+          "type": "SLOT",
+          "figmaKey": "Dialog Content#21352:12",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Dialog Footer",
+          "type": "SLOT",
+          "figmaKey": "Dialog Footer#21352:13",
+          "code": {
+            "part": "DialogFooter"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Dialog / Close Icon",
+        "type": "COMPONENT_SET",
+        "id": "5056:13504",
+        "key": "00ae95a4d8aaa28cb765dc518738c3aa5188956c"
+      },
+      "code": {
+        "export": "DialogContent",
+        "internal": "Schliessen-Button (showCloseButton)"
+      },
+      "props": [
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":hover",
+            "Focus": ":focus-visible"
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "Dialog",
+    "DialogTrigger",
+    "DialogClose",
+    "DialogHeader",
+    "DialogPortal",
+    "DialogOverlay"
+  ],
+  "codeOnlyValues": [
+    {
+      "export": "DialogFooter",
+      "prop": "showCloseButton",
+      "values": [
+        "true",
+        "false"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "DialogHeader ist in Figma kein eigener Slot (Titel/Beschreibung fest verdrahtet). – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-017"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "tabs",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/tabs.tsx",
+    "registry": "@shadcn/tabs",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Tabs"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Tabs",
+        "type": "COMPONENT_SET",
+        "id": "21133:27311",
+        "key": "99f3c65a6015b9e327bae0222df5fefb4c2240e1"
+      },
+      "code": {
+        "export": "Tabs",
+        "with": "TabsList"
+      },
+      "props": [
+        {
+          "figma": "Items",
+          "type": "SLOT",
+          "figmaKey": "Items#21408:6",
+          "code": {
+            "part": "TabsList",
+            "children": true
+          }
+        },
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "part": "TabsList",
+            "prop": "variant"
+          },
+          "values": {
+            "Default": "default",
+            "Line": "line"
+          }
+        },
+        {
+          "figma": "Orientation",
+          "type": "VARIANT",
+          "code": {
+            "prop": "orientation",
+            "valuesFrom": {
+              "package": "@base-ui/react"
+            }
+          },
+          "values": {
+            "Default": "horizontal",
+            "Vertical": "vertical"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Tabs / Trigger",
+        "type": "COMPONENT_SET",
+        "id": "183:532",
+        "key": "a7d8de1273ae20b6c98c9dc40d5b61f7e8cd0540"
+      },
+      "code": {
+        "export": "TabsTrigger"
+      },
+      "props": [
+        {
+          "figma": "Tab Text",
+          "type": "TEXT",
+          "figmaKey": "Tab Text#183:21",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Icon#753:3",
+          "code": {
+            "child": "<Icon />"
+          }
+        },
+        {
+          "figma": "Badge",
+          "type": "BOOLEAN",
+          "figmaKey": "Badge#17421:0",
+          "code": {
+            "child": "<Badge />"
+          }
+        },
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "inherited": "TabsList.variant"
+          },
+          "values": {
+            "Default": "default",
+            "Line": "line"
+          }
+        },
+        {
+          "figma": "Active",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Off": null,
+            "On": "data-active (value = ausgewählter Tab)"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":hover",
+            "Focus": ":focus-visible",
+            "Disabled": "disabled"
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "TabsContent"
+  ],
+  "issues": []
+}

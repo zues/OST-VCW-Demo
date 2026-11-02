@@ -1,0 +1,108 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "empty",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/empty.tsx",
+    "registry": "@shadcn/empty",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Empty"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Empty",
+        "type": "COMPONENT",
+        "id": "18672:2962",
+        "key": "aca783dcdf21391fade7b1931547a093e07caa79"
+      },
+      "code": {
+        "export": "Empty"
+      },
+      "props": [
+        {
+          "figma": "Empty Header",
+          "type": "SLOT",
+          "figmaKey": "Empty Header#21417:0",
+          "code": {
+            "part": "EmptyHeader"
+          }
+        },
+        {
+          "figma": "Title Text",
+          "type": "TEXT",
+          "figmaKey": "Title Text#18672:1",
+          "code": {
+            "part": "EmptyTitle",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Title",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Title#18672:4",
+          "code": {
+            "part": "EmptyTitle"
+          }
+        },
+        {
+          "figma": "Description Text",
+          "type": "TEXT",
+          "figmaKey": "Description Text#18672:2",
+          "code": {
+            "part": "EmptyDescription",
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Description",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Description#18672:3",
+          "code": {
+            "part": "EmptyDescription"
+          }
+        },
+        {
+          "figma": "Empty Content",
+          "type": "SLOT",
+          "figmaKey": "Empty Content#21418:1",
+          "code": {
+            "part": "EmptyContent"
+          }
+        }
+      ]
+    },
+    {
+      "figma": {
+        "name": "Empty / Media",
+        "type": "COMPONENT_SET",
+        "id": "18672:1781",
+        "key": "7a77668605ec6bd8aa1450e852f6c3a6323624c5"
+      },
+      "code": {
+        "export": "EmptyMedia"
+      },
+      "props": [
+        {
+          "figma": "Type",
+          "type": "VARIANT",
+          "code": {
+            "prop": "variant"
+          },
+          "values": {
+            "Icon": "icon",
+            "Avatar": "default",
+            "AvatarGroup": "default"
+          },
+          "note": "Avatar/AvatarGroup: variant default mit <Avatar>/<AvatarGroup> als Inhalt."
+        }
+      ]
+    }
+  ],
+  "codeOnly": [],
+  "issues": []
+}

@@ -1,0 +1,155 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "meetup-attendees",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/meetup-attendees.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "badge",
+    "button",
+    "card",
+    "avatar",
+    "dialog",
+    "item",
+    "scroll-area"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "MeetupAttendees",
+        "type": "COMPONENT_SET",
+        "id": "27477:613602",
+        "key": "0f89161494d8cf542f90a966cce88715f98e009c"
+      },
+      "code": {
+        "export": "MeetupAttendees"
+      },
+      "note": "Teilnehmende als Karten (max. 3 + „weitere“) und Dialog mit allen. Liest den Teilnahme-Status (localStorage) und zählt „Du“ mit.",
+      "props": [
+        {
+          "figma": "Breakpoint",
+          "type": "VARIANT",
+          "code": {
+            "className": "`grid-cols-2 sm:grid-cols-4`"
+          },
+          "values": {
+            "Desktop": "≥ sm",
+            "Mobile": "< sm"
+          },
+          "note": "Variante Mobile (342 px, Karten 2-spaltig) per Claude Code ergänzt am 01.11.2026. Ebenen-IDs unten beziehen sich auf die Desktop-Variante 27473:10003."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Heading › Title › Teilnehmende",
+      "code": {
+        "element": "h2"
+      },
+      "figmaId": "27462:598893",
+      "data": "t.attendees.title"
+    },
+    {
+      "figma": "Heading › Title › Badge Number",
+      "code": {
+        "part": "Badge",
+        "props": {
+          "variant": "secondary"
+        }
+      },
+      "figmaId": "27462:598894",
+      "figmaProp": "Badge Text#26:6",
+      "data": "members.length"
+    },
+    {
+      "figma": "Heading › Button „Alle anzeigen“",
+      "code": {
+        "part": "DialogTrigger"
+      },
+      "figmaId": "27462:598896",
+      "note": "Rendert `Button variant=\"link\"`; öffnet Dialog „Teilnehmende (N)“ (Overlay `27462:603355`)."
+    },
+    {
+      "figma": "Cards › Card",
+      "code": {
+        "part": "Card",
+        "props": {
+          "size": "sm"
+        }
+      },
+      "figmaId": "27462:599488",
+      "data": "members.slice(0, 3)"
+    },
+    {
+      "figma": "Cards › Card › Avatar",
+      "code": {
+        "part": "Avatar",
+        "props": {
+          "size": "lg"
+        }
+      },
+      "data": "member.avatarUrl, member.name"
+    },
+    {
+      "figma": "Cards › Card › Badge „Host“",
+      "code": {
+        "part": "Badge",
+        "props": {
+          "variant": "outline"
+        }
+      },
+      "when": "index < 2",
+      "data": "t.attendees.host"
+    },
+    {
+      "figma": "Cards › Card „+4 weitere“",
+      "code": {
+        "part": "AvatarGroup"
+      },
+      "figmaId": "27462:599664",
+      "when": "members.length > 3",
+      "data": "t.attendees.more(rest.length)"
+    },
+    {
+      "figma": "Cards › Card „+4 weitere“ › Avatar Group › Avatar / Group Count",
+      "code": {
+        "part": "AvatarGroupCount"
+      },
+      "figmaId": "I27462:599664;21123:292672;27462:599715;21352:82827;27462:599720",
+      "when": "rest.length > 2",
+      "data": "`+${rest.length - 2}`"
+    }
+  ],
+  "codeOnly": [
+    "CardContent",
+    "AvatarImage",
+    "AvatarFallback",
+    "Button",
+    "Dialog",
+    "DialogContent",
+    "DialogHeader",
+    "DialogTitle",
+    "ScrollArea",
+    "ItemGroup",
+    "Item",
+    "ItemMedia",
+    "ItemContent",
+    "ItemTitle",
+    "ItemDescription"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Keine Component Properties. – Akzeptiert: nur Zustände als Varianten, keine Component Properties (Entscheidung Alex, 01.11.2026).",
+      "drift": "D-051"
+    }
+  ]
+}

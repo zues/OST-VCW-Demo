@@ -1,0 +1,165 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "site-header",
+  "status": "draft",
+  "kind": "composition",
+  "scannedAt": "2026-10-31",
+  "code": {
+    "file": "src/components/site-header.tsx"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "MeetCat"
+  },
+  "uses": [
+    "button",
+    "dropdown-menu",
+    "input-group",
+    "separator"
+  ],
+  "parts": [
+    {
+      "figma": {
+        "name": "SiteHeader",
+        "type": "COMPONENT_SET",
+        "id": "27477:611704",
+        "key": "3b8464d7548241bbc87f97f38b3e807a1b1e85c4"
+      },
+      "code": {
+        "export": "SiteHeader"
+      },
+      "note": "Instanzen auf Übersicht und Detail. Im Code Client Component, Texte aus `usePreferences().t.header`, Sprache und Ort aus Cookies.",
+      "props": [
+        {
+          "figma": "Breakpoint",
+          "type": "VARIANT",
+          "code": {
+            "className": "responsive: Nav `hidden lg:flex`, Menü-Button `lg:hidden`, Orts-Trigger `hidden sm:flex`"
+          },
+          "values": {
+            "Desktop": "≥ lg",
+            "Mobile": "< lg"
+          },
+          "note": "Variante Mobile per Claude Code ergänzt am 01.11.2026 (D-045). Geöffnetes Menü: Frame „SiteHeader – Mobile, Menü offen“ (27477:611725)."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "figma": "Logo (Instanz von „MeetCat Logo“ 27477:623867)",
+      "code": {
+        "element": "Link href=\"/\" + next/image `/logo.svg` (h-8)"
+      },
+      "figmaId": "27477:623868"
+    },
+    {
+      "figma": "Search (InputGroup)",
+      "code": {
+        "part": "InputGroup"
+      },
+      "figmaId": "27459:595945",
+      "figmaProp": "Placeholder Text#65:12",
+      "data": "t.header.search",
+      "note": "Im Code in `next/form` (GET auf `/`, Feld `q`)."
+    },
+    {
+      "figma": "Search › InputGroup / Addon Inline (Variant=Dropdown) › Button „Zürich, CH“",
+      "code": {
+        "part": "InputGroupButton",
+        "props": {
+          "size": "sm"
+        }
+      },
+      "data": "cityName(city) + \", CH\"",
+      "note": "Trigger der Ortsauswahl (`DropdownMenu`), erst ab `sm` sichtbar. Figma: Kit-Variante `Dropdown` (seit 01.11.2026, D-023), Button Ghost/sm mit Lucide MapPin; geöffnetes Menü nicht gezeichnet (D-046).",
+      "figmaId": "I27459:595945;18677:9986"
+    },
+    {
+      "figma": "Search › Button (Suchen)",
+      "code": {
+        "part": "InputGroupButton",
+        "props": {
+          "variant": "default",
+          "size": "icon-sm"
+        }
+      }
+    },
+    {
+      "figma": "Spacer",
+      "code": {
+        "element": "ml-auto am Nav"
+      },
+      "figmaId": "27459:596180"
+    },
+    {
+      "figma": "Nav › Button „Deutsch“",
+      "code": {
+        "part": "DropdownMenuTrigger"
+      },
+      "figmaId": "27459:596182",
+      "note": "Rendert `Button variant=\"ghost\"` mit GlobeIcon, öffnet `DropdownMenuRadioGroup` mit den Sprachen."
+    },
+    {
+      "figma": "Nav › Button „Anmelden“",
+      "code": {
+        "part": "Button",
+        "props": {
+          "variant": "ghost"
+        }
+      },
+      "figmaId": "27459:596304",
+      "data": "t.header.login"
+    },
+    {
+      "figma": "Nav › Button „Registrieren“",
+      "code": {
+        "part": "Button"
+      },
+      "figmaId": "27459:596425",
+      "data": "t.header.signup"
+    },
+    {
+      "figma": "Button (Menü, lg:hidden) – nur Breakpoint=Mobile",
+      "code": {
+        "part": "Button",
+        "props": {
+          "variant": "ghost",
+          "size": "icon"
+        }
+      },
+      "figmaId": "27477:611692",
+      "note": "Trigger des `DropdownMenu` mit Anmelden, Registrieren, Ort (RadioGroup), Sprache (RadioGroup); Lucide `Menu`."
+    }
+  ],
+  "codeOnly": [
+    "InputGroupAddon",
+    "InputGroupInput",
+    "Separator",
+    "DropdownMenu",
+    "DropdownMenuContent",
+    "DropdownMenuGroup",
+    "DropdownMenuItem",
+    "DropdownMenuLabel",
+    "DropdownMenuRadioGroup",
+    "DropdownMenuRadioItem",
+    "DropdownMenuSeparator"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "Geöffnetes Orts-Menü (Städteliste) ist in Figma nicht gezeichnet; Inhalt siehe src/data/cities.ts. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-046"
+    },
+    {
+      "severity": "info",
+      "message": "Spacer-Frame in Figma, ml-auto im Code. – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-052"
+    },
+    {
+      "severity": "info",
+      "message": "Keine Component Properties. – Akzeptiert: nur Zustände als Varianten, keine Component Properties (Entscheidung Alex, 01.11.2026).",
+      "drift": "D-051"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "../contract.schema.json",
+  "id": "button",
+  "status": "draft",
+  "scannedAt": "2026-10-30",
+  "code": {
+    "file": "src/components/ui/button.tsx",
+    "registry": "@shadcn/button",
+    "style": "base-nova"
+  },
+  "figma": {
+    "fileKey": "la64IYsP0s5iqsJ2ltpf4T",
+    "page": "Button"
+  },
+  "parts": [
+    {
+      "figma": {
+        "name": "Button",
+        "type": "COMPONENT_SET",
+        "id": "37:931",
+        "key": "a47eff6f8aaf21287810030bd7bcae385add2567"
+      },
+      "code": {
+        "export": "Button"
+      },
+      "props": [
+        {
+          "figma": "Button Text",
+          "type": "TEXT",
+          "figmaKey": "Button Text#37:10",
+          "code": {
+            "children": true
+          }
+        },
+        {
+          "figma": "Show Left Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Left Icon#37:11",
+          "code": {
+            "child": "<Icon data-icon=\"inline-start\" />"
+          }
+        },
+        {
+          "figma": "Show Right Icon",
+          "type": "BOOLEAN",
+          "figmaKey": "Show Right Icon#267:0",
+          "code": {
+            "child": "<Icon data-icon=\"inline-end\" />"
+          }
+        },
+        {
+          "figma": "Show KbdGroup",
+          "type": "BOOLEAN",
+          "figmaKey": "Show KbdGroup#18754:0",
+          "code": null,
+          "note": "Kbd ist im Prototyp nicht installiert."
+        },
+        {
+          "figma": "Variant",
+          "type": "VARIANT",
+          "code": {
+            "prop": "variant"
+          },
+          "values": {
+            "Default": "default",
+            "Secondary": "secondary",
+            "Destructive": "destructive",
+            "Outline": "outline",
+            "Ghost": "ghost",
+            "Link": "link"
+          }
+        },
+        {
+          "figma": "Size",
+          "type": "VARIANT",
+          "code": {
+            "prop": "size"
+          },
+          "values": {
+            "default": "default",
+            "xs": "xs",
+            "sm": "sm",
+            "lg": "lg",
+            "icon": "icon",
+            "icon-xs": "icon-xs",
+            "icon-sm": "icon-sm",
+            "icon-lg": "icon-lg"
+          }
+        },
+        {
+          "figma": "State",
+          "type": "VARIANT",
+          "code": {
+            "state": true
+          },
+          "values": {
+            "Default": null,
+            "Hover": ":hover",
+            "Focus": ":focus-visible",
+            "Pressed": ":active",
+            "Disabled": "disabled",
+            "Loading": null
+          }
+        }
+      ]
+    }
+  ],
+  "codeOnly": [
+    "buttonVariants"
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "message": "State 'Loading' hat keine Entsprechung im Code. Muster: <Button disabled><Spinner data-icon=\"inline-start\" /> Text</Button> (Spinner aus shadcn installieren). – Akzeptiert (01.11.2026, siehe DRIFT-LOG).",
+      "drift": "D-010"
+    }
+  ]
+}

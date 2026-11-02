@@ -4,20 +4,21 @@ Stand: 02.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 
 ## Nächste Schritte
 
-- [ ] **Figma-Inhalte auf die neuen Daten umstellen** (02.11.2026, grösstenteils erledigt):
+- [ ] **Figma-Inhalte auf die neuen Daten umstellen** (02.11.2026, bis auf die Upload-Frames erledigt):
   - [x] Alle 20 Bilder sind in der Datei. Die Hashes stehen in
         [contracts/figma-images.json](contracts/figma-images.json); der Weg ist in
         [FIGMA-ARBEITSWEISE.md](contracts/FIGMA-ARBEITSWEISE.md#bilder-hochladen) beschrieben.
   - [x] Übersicht Desktop und Mobile, Gruppen / Desktop, Detail Desktop und Mobile sowie die Dialoge
         in „Overlays“ zeigen dieselben Inhalte wie die App (Detail = „Countdown im Kinderzimmer: Raketenbau“).
-  - [ ] **Standardinhalte der Komponenten** in der Section „MeetCat Komponenten“: MeetupCard, GroupCard,
-        MeetupActionBar (alle Varianten), Frame „MeetupActionBar – Zustände“, MeetupAttendees und
-        AttendDialog zeigen evtl. noch „Fellpflege-Basics …“. Das Skript dafür ist beim Plugin-Absturz
-        abgebrochen, der Zustand ist also unklar. Prüfen und auf Meetup 1 / Mission Miau umstellen.
-  - [ ] **Mobile-Screen „Übersicht – Gruppen / Mobile“** bauen: Kopie von „Übersicht / Mobile“, Platz
-        x 1640 / y 2000. Tabs mit aktivem „Gruppen“, Titel „Gruppen in der Nähe von Zürich, CH“, keine
-        Filterleiste und kein Carousel, GroupCards einspaltig mit den ersten Gruppen
-        (Schnurrlock Holmes, Schnurr & Knips, Das Blubberlabor, Camping unterm Sofazelt).
+  - [x] **Standardinhalte der Komponenten** (02.11.2026) in „MeetCat Komponenten“: MeetupCard (beide
+        States), MeetupActionBar (alle 16 Varianten), MeetupAttendees, AttendDialog (beide) zeigen
+        „Countdown im Kinderzimmer: Raketenbau“ / Mission Miau, GroupCard zeigt Schnurrlock Holmes.
+        Hinweis: In den Mobile-Varianten der ActionBar waren die Textebenen im Slot defekt („no text data“);
+        die Card wurde pro Variante durch eine Kopie ersetzt. Instanzen dieser Varianten verlieren dabei
+        ihre Text-Overrides.
+  - [x] **„Übersicht – Gruppen / Mobile“** (`27511:628703`, x 1640 / y 2000, 02.11.2026): Tabs mit aktivem
+        „Gruppen“, Titel, GroupCards einspaltig (Schnurrlock Holmes, Schnurr & Knips, Das Blubberlabor,
+        Camping unterm Sofazelt).
   - [ ] Die 20 Upload-Frames `27502:5650`–`27502:5669` (oben rechts auf der Page) löschen oder in eine
         Section „Bilder“ verschieben.
 - [ ] **Aufräumen: [docs/setup-anleitung.html](docs/setup-anleitung.html)** (02.11.2026) ist eine Kopie der

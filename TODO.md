@@ -16,7 +16,6 @@ Stand: 01.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
 - [x] **Git-Repositories** (02.11.2026): `musterloesung/` → https://github.com/zues/OST-VCW-Demo,
       `starter/` → https://github.com/zues/OST-VC-Base (beide öffentlich, Branch `main`).
       `KONZEPT.md`, `TODO.md` und `contracts/` liegen seit 02.11.2026 im Demo-Repo.
-- [ ] Bilder von cataas.com liegen jetzt öffentlich im Demo-Repo – Lizenz klären.
 - [x] `npm run lint` grün (02.11.2026): Regel `react-hooks/set-state-in-effect` für
       `src/components/ui/**` abgeschaltet (in beiden Repos). Grund: shadcn-`Carousel` gleicht im
       Effect einmal `canScrollPrev/Next` ab – gewollt, unkritisch, und die shadcn-Dateien bleiben unverändert.
@@ -106,16 +105,13 @@ Stand: 01.11.2026. Hintergrund und Entscheidungen: [KONZEPT.md](KONZEPT.md).
       shadcndesign.com/help anfragen, ob View-Zugriff für Studierende erlaubt ist – sonst Alternative
       (z. B. Obra shadcn/ui Community Edition) für die Studierenden-Datei.
 - [ ] **Bildrechte:** Katzenbilder (cataas.com, Lizenz unklar) durch Unsplash-Bilder oder eigene
-      Fotos ersetzen, bevor die Vorlage verteilt wird.
+      Fotos ersetzen, bevor die Vorlage verteilt wird – liegen seit 02.11. öffentlich im Demo-Repo.
 - [ ] Vorwissen und Zeitrahmen der Studierenden festlegen → Aufgabenstufen anpassen.
 - [ ] Optional: Deployment (z. B. Vercel), damit Gruppen eine Live-URL bekommen.
 
 ## Technische Kleinigkeiten
 
-- [ ] Lint-Fehler in shadcns `carousel.tsx` (`react-hooks/set-state-in-effect`) – Datei bewusst
-      nicht angepasst; ggf. Regel für `components/ui/` deaktivieren.
 - [ ] Unbekannte Meetup-Slugs liefern die 404-Seite, aber HTTP-Status 200 („Soft 404“), weil
       `notFound()` innerhalb der Suspense-Grenze aufgerufen wird. Prüfen, ob sich das mit
       `cacheComponents` sauber lösen lässt (z. B. Slug-Prüfung vor der Suspense-Grenze).
-- [ ] Git-Repository(s) anlegen (bisher keins).
 - [ ] Bridge-Plugin aktualisieren (installiert 1.39.0, verfügbar 1.41.5).

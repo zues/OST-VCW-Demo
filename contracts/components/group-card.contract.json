@@ -73,7 +73,7 @@
       "code": {
         "part": "CardDescription"
       },
-      "figmaId": "27477:608278",
+      "figmaId": "I27473:11848;17374:183173;27477:608279",
       "data": "group.rating.toFixed(1) + StarIcon + t.group.meetups(meetupCount)",
       "note": "Stern als Lucide-Icon `Star` 12px gefüllt (≙ `StarIcon size-3 fill-current`), seit 01.11.2026 (D-050)."
     },
@@ -95,7 +95,7 @@
           "variant": "outline"
         }
       },
-      "figmaId": "27473:11904",
+      "figmaId": "I27473:11848;17374:183174;27473:12025",
       "figmaProp": "Card Footer Content#21349:49",
       "data": "t.group.showMeetups",
       "note": "Wechselt in den Meetups-Tab mit `?q=<Gruppe>`."
